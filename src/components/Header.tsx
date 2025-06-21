@@ -76,7 +76,7 @@ export default function Header() {
               })}
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="items-center gap-4 hidden md:flex">
               <Button variant="shiny" size="lg" className=" rounded-[15px]">
                 <Link href="/contact">Contact Us</Link>
               </Button>
