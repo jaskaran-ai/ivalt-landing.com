@@ -1,12 +1,12 @@
 import Container from "../Container";
 import SectionTitle from "../SectionTitle";
-
 import Image from "next/image";
 import contextID from "@/assets/images/solutions/3.png";
 import { FadeInOnScroll } from "../ui/FadeInOnScroll";
-import { Check } from "lucide-react";
+import { FeatureList } from "../ui/FeatureList";
+import { Heading3, BodyText } from "../ui/typography";
 
-const Points = [
+const features = [
   "Mobile-Centric",
   "Mandated Biometrics",
   "5+ Factors",
@@ -17,50 +17,89 @@ const Points = [
 
 export default function ContextID() {
   return (
-    <FadeInOnScroll className="bg-[#FAF9F7] py-6 md:pt-12 pb-28">
+    <FadeInOnScroll className="bg-[#FAF9F7] py-6 md:py-12">
       <Container className="max-w-7xl">
         <SectionTitle
           title="ContextID"
           description="Strongest Enterprise Identity Protection"
         />
-        <div className="flex justify-center items-center my-4 mb-6 relative">
-          <Image
-            src={contextID}
-            alt="ContextID"
-            width={1500}
-            height={1500}
-            className="w-full h-full object-cover mb-3"
-          />
-          <div className="flex flex-col items-start justify-center absolute -bottom-30 left-30">
-            {Points.map((point, index) => (
-              <div
-                key={index}
-                className="flex rounded-full items-center gap-2 p-2 w-full"
-              >
-                <div className="flex items-center justify-center bg-[#FAF9F7] rounded-full p-2 shadow-sm">
-                  <Check
-                    className="text-navy-primary w-4 h-4"
-                    width={24}
-                    height={24}
-                  />
-                </div>
-                <h1 className="text-base md:text-sm text-navy-primary text-left">
-                  {point}
-                </h1>
+
+        {/* Mobile-first layout */}
+        <div className="space-y-8">
+          {/* Image Section */}
+          <div className="flex justify-center items-center">
+            <Image
+              src={contextID}
+              alt="ContextID"
+              width={1500}
+              height={1500}
+              className="w-full sm:w-[90%] md:w-[80%] lg:w-[100%] h-auto object-cover"
+            />
+          </div>
+
+          {/* Features Grid - Mobile Responsive */}
+          <div className="lg:hidden">
+            <FeatureList
+              features={features}
+              iconBackgroundClassName="bg-white rounded-full p-2 shadow-sm"
+              textClassName="text-sm sm:text-base text-navy-primary text-left"
+              animateItems={true}
+              animationDelay={1}
+              responsiveColumns={true}
+            />
+          </div>
+          {/* Additional Information */}
+          <div className="space-y-2 text-center">
+            <FadeInOnScroll delay={0.8}>
+              <Heading3 color="navy-primary" className="text-center">
+                Universal Authenticator
+              </Heading3>
+            </FadeInOnScroll>
+
+            <FadeInOnScroll delay={0.6}>
+              <BodyText className="text-navy-primary font-medium max-w-2xl mx-auto">
+                Plus new services like DocuID™ and Others integrated with iVALT
+              </BodyText>
+            </FadeInOnScroll>
+          </div>
+          {/* Desktop Layout with Overlaid Features */}
+          <div className="hidden lg:block relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              {/* Left Features */}
+              <div className="space-y-3">
+                {features.slice(0, 3).map((feature, index) => (
+                  <FadeInOnScroll key={index} delay={index * 0.2}>
+                    <div className="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm">
+                      <div className="flex items-center justify-center bg-[#FAF9F7] rounded-full p-2 shadow-sm min-w-[32px] h-8">
+                        <span className="w-2 h-2 bg-teal-primary rounded-full"></span>
+                      </div>
+                      <span className="text-sm font-medium text-navy-primary">
+                        {feature}
+                      </span>
+                    </div>
+                  </FadeInOnScroll>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <div className="absolute bottom-15 right-0">
-            <h1 className="text-base font-semibold text-navy-primary text-left max-w-md mr-6">
-              Plus new services like DocuID™ and Others integrated with iVALT
-            </h1>
-          </div>
+              {/* Center - Empty for spacing */}
+              <div></div>
 
-          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-            <h1 className="text-2xl font-semibold text-navy-primary text-left max-w-md ml-6">
-              Universal Authenticator
-            </h1>
+              {/* Right Features */}
+              <div className="space-y-3">
+                {features.slice(3).map((feature, index) => (
+                  <FadeInOnScroll key={index + 3} delay={(index + 3) * 0.2}>
+                    <div className="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm">
+                      <div className="flex items-center justify-center bg-[#FAF9F7] rounded-full p-2 shadow-sm min-w-[32px] h-8">
+                        <span className="w-2 h-2 bg-teal-primary rounded-full"></span>
+                      </div>
+                      <span className="text-sm font-medium text-navy-primary">
+                        {feature}
+                      </span>
+                    </div>
+                  </FadeInOnScroll>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </Container>
