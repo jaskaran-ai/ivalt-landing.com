@@ -29,7 +29,9 @@ function CompetitiveAdvantageCard({
   iconColor,
 }: CompetitiveAdvantageProps) {
   return (
-    <div className={`bg-gray-50 rounded-lg px-6 py-4 ${borderColor}`}>
+    <div
+      className={`bg-[#FAF9F7] rounded-xl px-6 py-4 ${borderColor} shadow-sm`}
+    >
       <div className="flex items-start gap-3">
         <Icon className={`h-6 w-6 ${iconColor} mt-1`} />
         <div>
@@ -129,12 +131,11 @@ export default function MarketOpportunitySection() {
           <div className="flex justify-center mt-6 mb-12">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-white text-lg font-bold">
               One Unified Platform for ALL Use Cases
-
             </div>
           </div>
         </FadeInOnScroll>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
             <div>
               <h3 className="text-2xl font-bold text-primary mb-6">
@@ -156,7 +157,7 @@ export default function MarketOpportunitySection() {
           </FadeInOnScroll>
 
           <FadeInOnScroll delay={0.2}>
-            <div className="bg-gradient-to-br from-teal-primary/10 to-primary/10 rounded-lg p-8 border-2 border-teal-primary/20">
+            <div className="bg-gradient-to-br from-teal-primary/10 to-primary/10 rounded-[30px] p-8 border-2 border-teal-primary/20">
               <h3 className="text-2xl font-bold text-primary mb-6">
                 Why iVALT Now?
               </h3>
@@ -170,7 +171,7 @@ export default function MarketOpportunitySection() {
                   />
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-white/50 rounded-lg">
+              <div className="mt-6 p-4 bg-white/50 rounded-xl shadow-sm">
                 <p className="text-primary font-semibold text-center">
                   iVALT is positioned to become the global standard for identity
                   validation

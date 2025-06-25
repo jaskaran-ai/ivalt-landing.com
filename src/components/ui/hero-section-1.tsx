@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 
 import HeroImage from "@/assets/hero-bg.jpeg";
 import { AnimatedGroup } from "./animated-group";
+import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
 
 const transitionVariants = {
   item: {
@@ -33,51 +35,19 @@ export function HeroSection() {
   return (
     <>
       <main className="overflow-hidden">
-        <div
-          aria-hidden
-          className="z-[2] absolute inset-0 pointer-events-none isolate opacity-50 contain-strict hidden lg:block"
-        >
-          <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
-          <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
-          <div className="h-[80rem] -translate-y-[350px] absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
-        </div>
-        <section>
+        <AnimatedGridPattern
+          numSquares={300}
+          maxOpacity={0.1}
+          duration={2}
+          repeatDelay={1}
+          className={cn(
+            "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[160%] skew-y-12",
+            "z-20 opacity-70"
+          )}
+        />
+        <section className="relative bg-gray-100/80 z-10">
           <div className="relative py-10 md:py-30">
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      delayChildren: 1,
-                    },
-                  },
-                },
-                item: {
-                  hidden: {
-                    opacity: 0,
-                    y: 20,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      type: "spring",
-                      bounce: 0.3,
-                      duration: 2,
-                    },
-                  },
-                },
-              }}
-              className="absolute inset-0 -z-20 py-10"
-            >
-              <Image
-                src={HeroImage}
-                alt="background"
-                className="absolute inset-x-0 -z-20 dark:block "
-                width={3276}
-                height={4095}
-              />
-            </AnimatedGroup>
             <div
               aria-hidden
               className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
@@ -155,7 +125,8 @@ export function HeroSection() {
                     key={2}
                     size="lg"
                     variant="shiny"
-                    className="h-10.5 rounded-xl px-5 bg-white/50 hover:bg-white/70 transition-all duration-300 text-primary"
+                    // className="h-10.5 rounded-xl px-5 bg-white hover:bg-white/70 transition-all duration-300 text-primary"
+                    className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md"
                   >
                     <Link href="/contact">
                       <span className="text-nowrap">Get Started</span>
