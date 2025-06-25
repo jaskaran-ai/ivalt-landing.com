@@ -6,8 +6,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { AnimatedGroup } from "./animated-group";
-import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
-import { cn } from "@/lib/utils";
+// import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
+// import { cn } from "@/lib/utils";
 
 const transitionVariants = {
   item: {
@@ -33,7 +33,7 @@ export function HeroSection() {
   return (
     <>
       <main className="overflow-hidden">
-        <AnimatedGridPattern
+        {/* <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.2}
           duration={2}
@@ -43,8 +43,8 @@ export function HeroSection() {
             "inset-x-0 inset-y-[-30%] h-[160%] skew-y-12",
             "z-20 opacity-70"
           )}
-        />
-        <section className="relative bg-gray-100/80 z-10">
+        /> */}
+        <section className="relative bg-[#FAF9F7] z-10">
           <div className="relative py-10 md:py-30">
             <div
               aria-hidden

@@ -1,5 +1,19 @@
 
 import { Smartphone, ShieldAlert, Bot } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "On-Demand ID™ - Combat Deepfakes & Social Engineering",
+  description: "Discover how iVALT's On-Demand ID provides real-time identity verification to protect you from deepfakes, scams, and social engineering attacks.",
+  openGraph: {
+    title: "On-Demand ID™ - Combat Deepfakes & Social Engineering",
+    description: "Verify the identity of anyone, anytime, with iVALT's On-Demand ID. The ultimate tool against modern digital threats.",
+  },
+  twitter: {
+    title: "On-Demand ID™ - Combat Deepfakes & Social Engineering",
+    description: "Don't fall for deepfakes or scams. Use iVALT's On-Demand ID for instant, reliable identity verification.",
+  },
+};
 
 export default function OnDemandIdPage() {
   const features = [
