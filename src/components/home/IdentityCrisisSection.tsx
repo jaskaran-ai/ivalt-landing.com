@@ -75,25 +75,25 @@ export default function IdentityCrisisSection() {
                 </p>
               </div>
               <div className="space-y-4">
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer group hover:scale-105">
                   <div className="flex items-center gap-3">
-                    <Lock className="h-5 w-5 text-teal-primary" />
+                    <Lock className="h-5 w-5 text-teal-primary group-hover:scale-110 transition-all duration-300" />
                     <p className="text-gray-700">
                       Stolen credentials become worthless
                     </p>
                   </div>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer group hover:scale-105">
                   <div className="flex items-center gap-3">
-                    <Bot className="h-5 w-5 text-teal-primary" />
+                    <Bot className="h-5 w-5 text-teal-primary group-hover:scale-110 transition-all duration-300" />
                     <p className="text-gray-700">
                       User experience is simplified to 1-Click
                     </p>
                   </div>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer group hover:scale-105">
                   <div className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-teal-primary" />
+                    <Shield className="h-5 w-5 text-teal-primary group-hover:scale-110 transition-all duration-300" />
                     <p className="text-gray-700">
                       Social engineering and AI deepfakes are blocked
                     </p>

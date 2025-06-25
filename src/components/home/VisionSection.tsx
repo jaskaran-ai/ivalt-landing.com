@@ -72,11 +72,15 @@ export default function VisionSection() {
               {futureApplications.map((app, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 border-sm shadow-sm"
+                  className="bg-white rounded-xl p-6 border-sm shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer group"
                 >
                   <div className="flex items-center gap-3">
-                    <app.icon className={`h-6 w-6 ${app.color}`} />
-                    <p className="text-gray-700">{app.text}</p>
+                    <app.icon
+                      className={`h-6 w-6 ${app.color} group-hover:scale-110 transition-all duration-300`}
+                    />
+                    <p className="text-gray-700 transition-all duration-300">
+                      {app.text}
+                    </p>
                   </div>
                 </div>
               ))}
