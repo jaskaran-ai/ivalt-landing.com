@@ -51,7 +51,7 @@ export function PartnershipBenefitCard({
           ))}
         </div>
 
-        <div className="pt-4 border-t border-gray-100">
+        {/* <div className="pt-4 border-t border-gray-100">
           <Button
             variant="shiny"
             size="lg"
@@ -62,7 +62,7 @@ export function PartnershipBenefitCard({
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
-        </div>
+        </div> */}
       </AnimatedShinyCard>
     </FadeInOnScroll>
   );

@@ -2,11 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import HeroImage from "@/assets/hero-bg.jpeg";
 import { AnimatedGroup } from "./animated-group";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
@@ -36,10 +34,10 @@ export function HeroSection() {
     <>
       <main className="overflow-hidden">
         <AnimatedGridPattern
-          numSquares={300}
-          maxOpacity={0.1}
+          numSquares={30}
+          maxOpacity={0.2}
           duration={2}
-          repeatDelay={1}
+          repeatDelay={2}
           className={cn(
             "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
             "inset-x-0 inset-y-[-30%] h-[160%] skew-y-12",

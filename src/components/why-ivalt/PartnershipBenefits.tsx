@@ -8,7 +8,10 @@ import {
   Users,
   DollarSign,
   BarChart3,
+  ArrowRight,
 } from "lucide-react";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Benefits = [
   {
@@ -116,7 +119,7 @@ export default function PartnershipBenefits() {
         </div>
 
         <FadeInOnScroll delay={0.7}>
-          <div className="mt-12 bg-gradient-to-r from-teal-primary/10 to-teal-primary/5 p-8 rounded-2xl border-2 border-teal-primary/20 text-center backdrop-blur-sm">
+          <div className="mt-12 bg-gradient-to-r from-teal-primary/10 to-teal-primary/5 p-8 rounded-[30px] border-2 border-teal-primary/20 text-center backdrop-blur-sm">
             <h3 className="text-3xl font-bold text-primary mb-4">
               7 Patents Granted, 10+ Patents Pending, 4 Registered Trademarks
             </h3>
@@ -125,15 +128,19 @@ export default function PartnershipBenefits() {
               strong portfolio of patents and trademarks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center px-8 py-3 bg-teal-primary text-white font-semibold rounded-full hover:bg-teal-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
+              <Button
+                variant="shiny"
+                size="lg"
+                className="inline-flex items-center px-12 py-7 bg-teal-primary text-white font-semibold rounded-full hover:bg-teal-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
               >
-                Start Partnership Discussion
-              </a>
+                <Link href="/contact" className="flex items-center gap-2">
+                  Partner with Us
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </Button>
               <a
                 href="/solutions"
-                className="inline-flex items-center px-8 py-3 bg-white text-teal-primary font-semibold rounded-full border-2 border-teal-primary hover:bg-teal-primary hover:text-white transition-colors duration-300"
+                className="inline-flex items-center px-8 py-3 bg-white text-primary font-semibold rounded-full border-2 border-primary hover:bg-primary hover:text-white transition-colors duration-300"
               >
                 Explore Solutions
               </a>
