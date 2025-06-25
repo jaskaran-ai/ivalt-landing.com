@@ -2,11 +2,8 @@ import Container from "@/components/Container";
 import SectionTitle from "@/components/SectionTitle";
 import { BodyText, Heading2 } from "@/components/ui/typography";
 import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
@@ -21,109 +18,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Contact Form */}
             <FadeInOnScroll delay={0.2}>
-              <Card className="bg-white border-4 border-gray-100 shadow-none">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-navy-primary">
-                    Send us a Message
-                  </CardTitle>
-                  <BodyText className="text-gray-600">
-                    Fill out the form below and we&apos;ll get back to you
-                    within 24 hours.
-                  </BodyText>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="firstName"
-                        className="text-navy-primary font-medium"
-                      >
-                        First Name *
-                      </Label>
-                      <Input
-                        id="firstName"
-                        placeholder="Your first name"
-                        className="border-gray-200 focus:border-teal-primary focus:ring-teal-primary/20"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="lastName"
-                        className="text-navy-primary font-medium"
-                      >
-                        Last Name *
-                      </Label>
-                      <Input
-                        id="lastName"
-                        placeholder="Your last name"
-                        className="border-gray-200 focus:border-teal-primary focus:ring-teal-primary/20"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="email"
-                      className="text-navy-primary font-medium"
-                    >
-                      Email Address *
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your.email@company.com"
-                      className="border-gray-200 focus:border-teal-primary focus:ring-teal-primary/20"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="company"
-                      className="text-navy-primary font-medium"
-                    >
-                      Company
-                    </Label>
-                    <Input
-                      id="company"
-                      placeholder="Your company name"
-                      className="border-gray-200 focus:border-teal-primary focus:ring-teal-primary/20"
-                    />
-                  </div>
-
-                  {/* <div className="space-y-2">
-                    <Label
-                      htmlFor="subject"
-                      className="text-navy-primary font-medium"
-                    >
-                      Subject *
-                    </Label>
-                    <Input
-                      id="subject"
-                      placeholder="What's this about?"
-                      className="border-gray-200 focus:border-teal-primary focus:ring-teal-primary/20"
-                    />
-                  </div> */}
-
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="message"
-                      className="text-navy-primary font-medium"
-                    >
-                      Message *
-                    </Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell us more about your needs..."
-                      rows={5}
-                      className="border-gray-200 focus:border-teal-primary focus:ring-teal-primary/20 resize-none"
-                    />
-                  </div>
-
-                  <Button className="w-full bg-teal-primary hover:bg-navy-primary text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                    Send Message
-                  </Button>
-                </CardContent>
-              </Card>
+              <ContactForm />
             </FadeInOnScroll>
 
             {/* Contact Information */}

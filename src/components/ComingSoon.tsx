@@ -10,8 +10,9 @@ import {
   SmallText,
   Caption,
 } from "@/components/ui/typography";
-import { Mail, Bell, CheckCircle } from "lucide-react";
+import { Mail, Bell, CheckCircle, AlertCircle } from "lucide-react";
 import Image from "next/image";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 interface ComingSoonProps {
   title?: string;
@@ -48,6 +49,9 @@ export default function ComingSoon({
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  const { getRecaptchaToken, isRecaptchaReady } = useRecaptcha();
 
   useEffect(() => {
     if (!launchDate || !showCountdown) return;
@@ -75,17 +79,57 @@ export default function ComingSoon({
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!email.trim()) {
+      setErrorMessage('Please enter a valid email address');
+      setSubmitStatus('error');
+      return;
+    }
+
+    if (!isRecaptchaReady) {
+      setErrorMessage('reCAPTCHA not ready. Please try again.');
+      setSubmitStatus('error');
+      return;
+    }
+
     setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await getRecaptchaToken('newsletter_signup');
+      if (!recaptchaToken) {
+        throw new Error('Failed to verify reCAPTCHA');
+      }
 
-    setIsSubscribed(true);
-    setIsSubmitting(false);
-    setEmail("");
+      // Submit email
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          recaptchaToken,
+        }),
+      });
 
-    // You can add actual email signup logic here
-    console.log("Email signup:", email);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to subscribe');
+      }
+
+      setIsSubscribed(true);
+      setSubmitStatus('success');
+      setEmail('');
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to subscribe');
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const CountdownBox = ({ value, label }: { value: number; label: string }) => (
@@ -157,12 +201,31 @@ export default function ComingSoon({
                   />
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-teal-primary hover:bg-light-teal text-white font-semibold"
+                    disabled={isSubmitting || !isRecaptchaReady}
+                    className="w-full bg-teal-primary hover:bg-light-teal disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold"
                   >
                     {isSubmitting ? "Subscribing..." : "Notify Me"}
                     {!isSubmitting && <Mail className="ml-2 h-4 w-4" />}
                   </Button>
+                  
+                  {submitStatus === 'error' && (
+                    <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-800 text-sm">
+                      <AlertCircle className="h-4 w-4" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+                  
+                  <p className="text-xs text-gray-400 text-center">
+                    This site is protected by reCAPTCHA and the Google{' '}
+                    <a href="https://policies.google.com/privacy" className="text-teal-primary hover:underline">
+                      Privacy Policy
+                    </a>{' '}
+                    and{' '}
+                    <a href="https://policies.google.com/terms" className="text-teal-primary hover:underline">
+                      Terms of Service
+                    </a>{' '}
+                    apply.
+                  </p>
                 </form>
                 <Caption className="text-gray-400 mt-3">
                   We&apos;ll never spam you. Unsubscribe at any time.
