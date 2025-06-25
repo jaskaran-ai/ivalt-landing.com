@@ -12,6 +12,7 @@ interface ApplicationCardProps {
   description: string;
   features: string[];
   delay?: number;
+  href: string;
 }
 
 export function ApplicationCard({
@@ -21,6 +22,7 @@ export function ApplicationCard({
   description,
   features,
   delay = 0,
+  href,
 }: ApplicationCardProps) {
   return (
     <FadeInOnScroll delay={delay}>
@@ -52,7 +54,7 @@ export function ApplicationCard({
           size="lg"
           className="rounded-[15px]  hover:cursor-pointer group-hover:bg-teal-primary hover:bg-teal-primary"
         >
-          <Link href="/solutions">Learn More</Link>
+          <Link href={href}>Learn More</Link>
         </Button>
       </AnimatedShinyCard>
     </FadeInOnScroll>
@@ -73,6 +75,7 @@ export default function KeyApplicationsSection() {
         "Prevents forwarding, printing, screenshots",
       ],
       delay: 0,
+      href: "/solutions/docuid",
     },
     {
       icon: Eye,
@@ -86,6 +89,7 @@ export default function KeyApplicationsSection() {
         "The only solution worldwide to truly defeat deepfake & social engineering attacks",
       ],
       delay: 0.1,
+      href: "/solutions/ondemandid",
     },
     {
       icon: Fingerprint,
@@ -98,6 +102,7 @@ export default function KeyApplicationsSection() {
         "1-Click user experience",
       ],
       delay: 0.2,
+      href: "/solutions/universalid",
     },
   ];
 
@@ -121,6 +126,7 @@ export default function KeyApplicationsSection() {
               description={app.description}
               features={app.features}
               delay={app.delay}
+              href={app.href}
             />
           ))}
         </div>
