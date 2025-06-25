@@ -12,14 +12,49 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "iVALT",
-  description: "Innovative identity solutions for modern security challenges. Protecting your digital future with advanced authentication technology.",
-  keywords: ["iVALT", "identity", "authentication", "security", "biometrics", "facial recognition", "fingerprint", "iris recognition", "on-demand ID", "universal biometric ID", "docuID", "mobile-centric identity", "real-time identity", "document access control", "AI-adaptive solutions", "next-gen security"],
+  title: {
+    default: "iVALT | Advanced Identity Verification & Biometric Security",
+    template: "%s | iVALT",
+  },
+  description:
+    "iVALT offers cutting-edge identity verification solutions, including biometric authentication, secure document access (DocuID), and real-time identity confirmation (On-Demand ID) to combat fraud and deepfakes.",
+  keywords: [
+    "iVALT",
+    "identity verification",
+    "biometric security",
+    "authentication",
+    "DocuID",
+    "On-Demand ID",
+    "Universal Biometric ID",
+    "deepfake protection",
+    "fraud prevention",
+    "cybersecurity",
+  ],
+  openGraph: {
+    title: "iVALT | Advanced Identity Verification & Biometric Security",
+    description:
+      "Discover iVALT's suite of identity solutions designed to protect your digital life from modern threats like deepfakes and social engineering.",
+    url: "https://www.ivalt.com",
+    siteName: "iVALT",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "iVALT | Advanced Identity Verification & Biometric Security",
+    description:
+      "Secure your digital identity with iVALT's advanced biometric solutions. Protect against fraud, deepfakes, and unauthorized access.",
+    images: ["/images/logo.png"],
+  },
   icons: {
     icon: "/favicon.ico",
-  },
-  openGraph: {
-    title: "iVALT",
   },
 };
 

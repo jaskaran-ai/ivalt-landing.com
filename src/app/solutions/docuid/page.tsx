@@ -1,5 +1,19 @@
 
 import { FileLock, ShieldCheck, UserCheck } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "DocuID™ - Secure Document Access Control",
+  description: "Learn how iVALT's DocuID empowers you to control who can access your sensitive documents with multi-factor authentication and full DRM protection.",
+  openGraph: {
+    title: "DocuID™ - Secure Document Access Control",
+    description: "Protect your documents from unauthorized access, forwarding, and screenshots with iVALT's DocuID.",
+  },
+  twitter: {
+    title: "DocuID™ - Secure Document Access Control",
+    description: "Take control of your document security with iVALT's DocuID. Multi-factor authentication and DRM to prevent unauthorized access.",
+  },
+};
 
 export default function DocuIdPage() {
   const features = [
