@@ -1,8 +1,6 @@
 import { FadeInOnScroll } from "../ui/FadeInOnScroll";
 import AnimatedShinyCard from "../ui/animated-shiny-card";
-import { Button } from "../ui/button";
-import { LucideIcon, Check, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { LucideIcon, Check } from "lucide-react";
 
 interface PartnershipBenefitCardProps {
   icon: LucideIcon;
