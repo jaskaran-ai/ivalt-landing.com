@@ -1,26 +1,38 @@
 
-import { Check } from "lucide-react";
+import { FileLock, ShieldCheck, UserCheck } from "lucide-react";
 
 export default function DocuIdPage() {
   const features = [
-    "Recipients verify identity via multi-factor authentication",
-    "Full Digital Rights Management (DRM)",
-    "Prevents forwarding, printing, screenshots",
+    {
+      icon: UserCheck,
+      text: "Recipients verify identity via multi-factor authentication",
+    },
+    { icon: FileLock, text: "Full Digital Rights Management (DRM)" },
+    {
+      icon: ShieldCheck,
+      text: "Prevents forwarding, printing, and screenshots",
+    },
   ];
 
   return (
-    <section className="min-h-screen bg-white py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-navy-primary mb-4">DocuID™</h1>
-        <h2 className="text-xl font-semibold text-teal-primary mb-6">Secure Document Access Control</h2>
-        <p className="text-lg text-gray-700 mb-8">
+    <section className="min-h-screen bg-background py-24">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-5xl font-extrabold text-navy-primary mb-4">
+          DocuID™
+        </h1>
+        <h2 className="text-2xl font-semibold text-teal-primary mb-12">
+          Secure Document Access Control
+        </h2>
+
+        <p className="text-xl text-gray-700 mb-16 leading-relaxed">
           Authors embed authorized recipients (via mobile #) in encrypted documents.
         </p>
-        <div className="space-y-4">
+
+        <div className="space-y-10">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-3">
-              <Check className="w-6 h-6 text-teal-primary" />
-              <p className="text-lg text-gray-800">{feature}</p>
+            <div key={index} className="flex flex-col items-center">
+              <feature.icon className="w-12 h-12 text-teal-primary mb-4" />
+              <p className="text-xl text-gray-800 font-medium max-w-md">{feature.text}</p>
             </div>
           ))}
         </div>

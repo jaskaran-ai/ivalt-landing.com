@@ -1,26 +1,38 @@
 
-import { Check } from "lucide-react";
+import { Smartphone, ShieldAlert, Bot } from "lucide-react";
 
 export default function OnDemandIdPage() {
   const features = [
-    "Instantly verify identity of suspicious calls/messages",
-    "Biometrics, registered device and location",
-    "The only solution worldwide to truly defeat deepfake & social engineering attacks",
+    {
+      icon: Smartphone,
+      text: "Instantly verify identity of suspicious calls/messages",
+    },
+    { icon: ShieldAlert, text: "Biometrics, registered device and location" },
+    {
+      icon: Bot,
+      text: "The only solution worldwide to truly defeat deepfake & social engineering attacks",
+    },
   ];
 
   return (
-    <section className="min-h-screen bg-white py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-navy-primary mb-4">On-Demand ID™</h1>
-        <h2 className="text-xl font-semibold text-teal-primary mb-6">Combatting Social Engineering & Deepfakes</h2>
-        <p className="text-lg text-gray-700 mb-8">
+    <section className="min-h-screen bg-background py-24">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-5xl font-extrabold text-navy-primary mb-4">
+          On-Demand ID™
+        </h1>
+        <h2 className="text-2xl font-semibold text-teal-primary mb-12">
+          Combatting Social Engineering & Deepfakes
+        </h2>
+
+        <p className="text-xl text-gray-700 mb-16 leading-relaxed">
           Real-time identity verification within our mobile app.
         </p>
-        <div className="space-y-4">
+
+        <div className="space-y-10">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-3">
-              <Check className="w-6 h-6 text-teal-primary" />
-              <p className="text-lg text-gray-800">{feature}</p>
+            <div key={index} className="flex flex-col items-center">
+              <feature.icon className="w-12 h-12 text-teal-primary mb-4" />
+              <p className="text-xl text-gray-800 font-medium max-w-md">{feature.text}</p>
             </div>
           ))}
         </div>

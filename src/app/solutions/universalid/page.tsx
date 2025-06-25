@@ -1,26 +1,35 @@
 
-import { Check } from "lucide-react";
+import { Fingerprint, Globe, MousePointerClick } from "lucide-react";
 
 export default function UniversalIdPage() {
   const features = [
-    'When an employee logs in, iVALT "pings" their mobile',
-    "Real-time biometric and contextual verification",
-    "1-Click user experience",
+    {
+      icon: Fingerprint,
+      text: 'When an employee logs in, iVALT "pings" their mobile',
+    },
+    { icon: Globe, text: "Real-time biometric and contextual verification" },
+    { icon: MousePointerClick, text: "1-Click user experience" },
   ];
 
   return (
-    <section className="min-h-screen bg-white py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-navy-primary mb-4">Universal Biometric ID®</h1>
-        <h2 className="text-xl font-semibold text-teal-primary mb-6">Enterprise Security</h2>
-        <p className="text-lg text-gray-700 mb-8">
+    <section className="min-h-screen bg-background py-24">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-5xl font-extrabold text-navy-primary mb-4">
+          Universal Biometric ID®
+        </h1>
+        <h2 className="text-2xl font-semibold text-teal-primary mb-12">
+          Enterprise Security
+        </h2>
+
+        <p className="text-xl text-gray-700 mb-16 leading-relaxed">
           Enhances corporate Identity and Access Management (IAM).
         </p>
-        <div className="space-y-4">
+
+        <div className="space-y-10">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-3">
-              <Check className="w-6 h-6 text-teal-primary" />
-              <p className="text-lg text-gray-800">{feature}</p>
+            <div key={index} className="flex flex-col items-center">
+              <feature.icon className="w-12 h-12 text-teal-primary mb-4" />
+              <p className="text-xl text-gray-800 font-medium max-w-md">{feature.text}</p>
             </div>
           ))}
         </div>
