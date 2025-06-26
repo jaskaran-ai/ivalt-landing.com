@@ -1,4 +1,4 @@
-import { HeroSection } from "@/components/ui/hero-section-1";
+import { HeroSection } from "@/components/ui/hero-section";
 import {
   IdentityCrisisSection,
   PlatformOverviewSection,
