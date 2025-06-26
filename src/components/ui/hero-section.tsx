@@ -46,10 +46,7 @@ export function HeroSection() {
         /> */}
         <section className="relative bg-[#FAF9F7] z-10">
           <div className="relative py-10 md:py-30">
-            <div
-              aria-hidden
-              className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
-            />
+            <div aria-hidden className="absolute inset-0 -z-10 size-full" />
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
