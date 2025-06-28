@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { AnimatedGroup } from "./animated-group";
@@ -121,10 +121,27 @@ export function HeroSection() {
                     size="lg"
                     variant="shiny"
                     // className="h-10.5 rounded-xl px-5 bg-white hover:bg-white/70 transition-all duration-300 text-primary"
-                    className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md"
+                    className="h-10.5 rounded-xl bg-[#FAF9F7] px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md"
                   >
                     <Link href="/contact">
                       <span className="text-nowrap">Get Started</span>
+                    </Link>
+                  </Button>
+
+                  <Button
+                    key={2}
+                    size="lg"
+                    variant="shiny"
+                    // className="h-10.5 rounded-xl px-5 bg-white hover:bg-white/70 transition-all duration-300 text-primary"
+                    className="h-10.5 rounded-xl bg-[#FAF9F7] px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md"
+                  >
+                    <Link
+                      href="/iVALT-brochure-final-version.pdf"
+                      className="flex items-center gap-2"
+                      target="_blank"
+                    >
+                      <Download className="size-4 mr-2" />
+                      <span className="text-nowrap">Download Brochure</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>
