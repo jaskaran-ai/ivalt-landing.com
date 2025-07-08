@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import { Download, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -79,6 +79,22 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <Button variant="shiny" size="lg" className=" rounded-[15px]">
                 <Link href="/contact">Contact Us</Link>
+              </Button>
+              <Button
+                key={2}
+                size="lg"
+                variant="shiny"
+                // className="h-10.5 rounded-xl px-5 bg-white hover:bg-white/70 transition-all duration-300 text-primary"
+                className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+              >
+                <Link
+                  href="/iVALT-brochure-final-version.pdf"
+                  className="flex items-center gap-2"
+                  target="_blank"
+                >
+                  <Download className="size-4 mr-2" />
+                  <span className="text-nowrap">Download iVALT Brochure</span>
+                </Link>
               </Button>
             </div>
           </div>
