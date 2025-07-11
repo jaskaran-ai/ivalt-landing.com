@@ -153,7 +153,7 @@ export default function Header() {
                       <Button
                         variant="shiny"
                         size="lg"
-                        className=" rounded-[15px]"
+                        className=" rounded-[15px] w-full"
                       >
                         <Link href="/contact">Contact Us</Link>
                       </Button>
@@ -161,7 +161,7 @@ export default function Header() {
                         key={2}
                         size="lg"
                         variant="shiny"
-                        className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-sm hidden md:block"
+                        className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-sm w-full"
                       >
                         <Link
                           href="/iVALT-brochure-final-version.pdf"
