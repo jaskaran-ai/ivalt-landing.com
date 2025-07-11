@@ -76,7 +76,7 @@ export default function Header() {
               })}
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="items-center gap-4 hidden md:flex">
               <Button variant="shiny" size="lg" className=" rounded-[15px]">
                 <Link href="/contact">Contact Us</Link>
               </Button>
@@ -149,9 +149,32 @@ export default function Header() {
                     );
                   })}
                   <div className="pt-4 border-t">
-                    <Button className="w-full bg-primary text-white hover:bg-primary/90">
-                      Try Now
-                    </Button>
+                    <div className="flex items-center gap-4 w-full flex-col">
+                      <Button
+                        variant="shiny"
+                        size="lg"
+                        className=" rounded-[15px]"
+                      >
+                        <Link href="/contact">Contact Us</Link>
+                      </Button>
+                      <Button
+                        key={2}
+                        size="lg"
+                        variant="shiny"
+                        className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-sm hidden md:block"
+                      >
+                        <Link
+                          href="/iVALT-brochure-final-version.pdf"
+                          className="flex items-center gap-2"
+                          target="_blank"
+                        >
+                          <Download className="size-4 mr-2" />
+                          <span className="text-nowrap">
+                            Download iVALT Brochure
+                          </span>
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </SheetContent>
