@@ -84,8 +84,7 @@ export default function Header() {
                 key={2}
                 size="lg"
                 variant="shiny"
-                // className="h-10.5 rounded-xl px-5 bg-white hover:bg-white/70 transition-all duration-300 text-primary"
-                className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+                className="h-10.5 rounded-xl bg-white px-5 border-primary border-1 text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-sm hidden md:block"
               >
                 <Link
                   href="/iVALT-brochure-final-version.pdf"
