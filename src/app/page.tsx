@@ -6,6 +6,13 @@ import {
   VisionSection,
   MarketOpportunitySection,
 } from "@/components/home";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "iVALT Home - Identity Validation Platform",
+  description:
+    "Discover iVALT’s revolutionary identity validation solutions for secure digital interactions.",
+};
 
 export default function Homepage2() {
   return (
