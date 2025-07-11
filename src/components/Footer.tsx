@@ -18,9 +18,9 @@ const footerLinks = {
   products: [
     {
       label: "Universal Biometric ID®",
-      href: "/solutions/universal-biometric-id",
+      href: "/solutions/universalid",
     },
-    { label: "On-Demand ID™", href: "/solutions/on-demand-id" },
+    { label: "On-Demand ID™", href: "/solutions/ondemandid" },
     { label: "DocuID™", href: "/solutions/docuid" },
   ],
   company: [
@@ -30,16 +30,9 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
     { label: "Press Releases", href: "/press-release" },
   ],
-  resources: [
-    { label: "Documentation", href: "/docs" },
-    { label: "Help Center", href: "/help" },
-    { label: "Community", href: "/community" },
-    { label: "Blog", href: "/blog" },
-  ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-and-conditions" },
-    { label: "Cookie Policy", href: "/cookie-policy" },
   ],
 };
 
@@ -200,22 +193,16 @@ export default function Footer() {
             </Caption>
             <div className="flex space-x-6">
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="text-gray-500 hover:text-navy-primary transition-colors duration-200"
               >
                 <Caption>Privacy</Caption>
               </Link>
               <Link
-                href="/terms"
+                href="/terms-and-conditions"
                 className="text-gray-500 hover:text-navy-primary transition-colors duration-200"
               >
                 <Caption>Terms</Caption>
-              </Link>
-              <Link
-                href="/cookies"
-                className="text-gray-500 hover:text-navy-primary transition-colors duration-200"
-              >
-                <Caption>Cookies</Caption>
               </Link>
             </div>
           </div>
