@@ -11,6 +11,7 @@ import {
   Globe,
   Zap,
   LucideIcon,
+  ArrowDownCircle,
 } from "lucide-react";
 
 interface CompetitiveAdvantageProps {
@@ -62,6 +63,13 @@ function WhyNowItem({ icon: Icon, text, iconColor }: WhyNowItemProps) {
 
 export default function MarketOpportunitySection() {
   const competitiveAdvantages = [
+    {
+      icon: ArrowDownCircle,
+      title: "1-Click to Zero Trust™",
+      description: "Mobile and Web Applications",
+      borderColor: "border-l-4 border-primary",
+      iconColor: "text-primary",
+    },
     {
       icon: Shield,
       title: "One Identity for Everything",

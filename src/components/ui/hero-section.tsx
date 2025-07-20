@@ -32,7 +32,7 @@ export function HeroSection() {
     <>
       <main className="overflow-hidden">
         <section className="relative bg-[#FAF9F7] z-10">
-          <div className="relative py-10 md:py-30">
+          <div className="relative py-10 md:py-20 md:pb-30">
             <div aria-hidden className="absolute inset-0 -z-10 size-full" />
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
@@ -57,7 +57,6 @@ export function HeroSection() {
                       </div>
                     </div>
                   </Link>
-
                   <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-bold">
                     <span className="text-teal-primary">iVALT</span>{" "}
                     <span className="text-primary">Stops</span>
@@ -65,10 +64,16 @@ export function HeroSection() {
                       <span className="text-primary">AI Identity Threats</span>
                     </div>
                   </h1>
-                  <h2 className="text-4xl font-bold text-teal-primary mb-8 mt-4">
+                  <h2 className="text-4xl font-bold text-teal-primary mb-4 mt-5">
                     WHO or WHAT is Really at the Endpoint?
                   </h2>
-                  <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-gray-600">
+                  <div className="flex mx-auto w-full justify-center align-center">
+                    <h2 className="text-4xl font-bold text-primary mt-4">
+                      1-Click to Zero Trust{" "}
+                    </h2>
+                    <span className="text-2xl font-normal mt-3">™</span>
+                  </div>
+                  <p className="mx-auto mt-4 max-w-2xl text-balance text-lg text-gray-600">
                     iVALT{"’"}s Identity Validation Platform® is a Revolutionary
                     Approach to Stop Identity Fraud for All Digital Interactions
                     – Humans, AI Agents and IOT Devices
