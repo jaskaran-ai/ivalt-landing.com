@@ -1,34 +1,37 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import { z } from 'zod';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { z } from "zod";
 
 // Validation schema for contact form
 const contactSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email('Invalid email address'),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
   inquiryType: z.string().optional(),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
+  message: z.string().min(10, "Message must be at least 10 characters"),
   firstName: z.string().optional(),
   lastName: z.string().optional(),
   company: z.string().optional(),
-  recaptchaToken: z.string().min(1, 'reCAPTCHA verification required'),
+  recaptchaToken: z.string().min(1, "reCAPTCHA verification required"),
 });
 
 // Verify reCAPTCHA token
 async function verifyRecaptcha(token: string): Promise<boolean> {
   try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-    });
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+      }
+    );
 
     const data = await response.json();
     return data.success && data.score >= 0.5; // Minimum score for v3
   } catch (error) {
-    console.error('reCAPTCHA verification error:', error);
+    console.error("reCAPTCHA verification error:", error);
     return false;
   }
 }
@@ -36,8 +39,8 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 // Create email transporter
 function createTransporter() {
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
+    host: process.env.SMTP_HOST || "smtp.gmail.com",
+    port: parseInt(process.env.SMTP_PORT || "587"),
     secure: false, // true for 465, false for other ports
     auth: {
       user: process.env.SMTP_USER,
@@ -49,15 +52,17 @@ function createTransporter() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     // Validate input
     const validatedData = contactSchema.parse(body);
-    
+
     // Verify reCAPTCHA
-    const isValidRecaptcha = await verifyRecaptcha(validatedData.recaptchaToken);
+    const isValidRecaptcha = await verifyRecaptcha(
+      validatedData.recaptchaToken
+    );
     if (!isValidRecaptcha) {
       return NextResponse.json(
-        { error: 'reCAPTCHA verification failed' },
+        { error: "reCAPTCHA verification failed" },
         { status: 400 }
       );
     }
@@ -66,17 +71,22 @@ export async function POST(request: NextRequest) {
     const transporter = createTransporter();
 
     // Prepare email content
-    const fullName = validatedData.firstName && validatedData.lastName 
-      ? `${validatedData.firstName} ${validatedData.lastName}`
-      : validatedData.name;
+    const fullName =
+      validatedData.firstName && validatedData.lastName
+        ? `${validatedData.firstName} ${validatedData.lastName}`
+        : validatedData.name;
 
     const emailContent = `
       New Contact Form Submission
       
       Name: ${fullName}
       Email: ${validatedData.email}
-      ${validatedData.company ? `Company: ${validatedData.company}` : ''}
-      ${validatedData.inquiryType ? `Inquiry Type: ${validatedData.inquiryType}` : ''}
+      ${validatedData.company ? `Company: ${validatedData.company}` : ""}
+      ${
+        validatedData.inquiryType
+          ? `Inquiry Type: ${validatedData.inquiryType}`
+          : ""
+      }
       
       Message:
       ${validatedData.message}
@@ -91,14 +101,27 @@ export async function POST(request: NextRequest) {
         
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <p><strong>Name:</strong> ${fullName}</p>
-          <p><strong>Email:</strong> <a href="mailto:${validatedData.email}">${validatedData.email}</a></p>
-          ${validatedData.company ? `<p><strong>Company:</strong> ${validatedData.company}</p>` : ''}
-          ${validatedData.inquiryType ? `<p><strong>Inquiry Type:</strong> ${validatedData.inquiryType}</p>` : ''}
+          <p><strong>Email:</strong> <a href="mailto:${validatedData.email}">${
+      validatedData.email
+    }</a></p>
+          ${
+            validatedData.company
+              ? `<p><strong>Company:</strong> ${validatedData.company}</p>`
+              : ""
+          }
+          ${
+            validatedData.inquiryType
+              ? `<p><strong>Inquiry Type:</strong> ${validatedData.inquiryType}</p>`
+              : ""
+          }
         </div>
         
         <div style="background: #ffffff; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px;">
           <h3 style="color: #495057; margin-top: 0;">Message:</h3>
-          <p style="line-height: 1.6; color: #6c757d;">${validatedData.message.replace(/\n/g, '<br>')}</p>
+          <p style="line-height: 1.6; color: #6c757d;">${validatedData.message.replace(
+            /\n/g,
+            "<br>"
+          )}</p>
         </div>
         
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #e9ecef;">
@@ -107,8 +130,14 @@ export async function POST(request: NextRequest) {
     `;
 
     // Get recipient emails (support multiple emails)
-    const contactEmails = process.env.CONTACT_EMAILS || process.env.CONTACT_EMAIL || 'info@ivalt.com';
-    const recipients = contactEmails.split(',').map(email => email.trim()).filter(email => email);
+    const contactEmails =
+      process.env.CONTACT_EMAILS ||
+      process.env.CONTACT_EMAIL ||
+      "info@ivalt.com";
+    const recipients = contactEmails
+      .split(",")
+      .map((email) => email.trim())
+      .filter((email) => email);
 
     // Send email to all recipients
     await transporter.sendMail({
@@ -124,7 +153,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `"iVALT" <${process.env.SMTP_USER}>`,
       to: validatedData.email,
-      subject: 'Thank you for contacting iVALT',
+      subject: "Thank you for contacting iVALT",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="text-align: center; padding: 20px;">
@@ -139,7 +168,10 @@ export async function POST(request: NextRequest) {
           
           <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #495057; margin-top: 0;">Your Message:</h3>
-            <p style="line-height: 1.6; color: #6c757d;">${validatedData.message.replace(/\n/g, '<br>')}</p>
+            <p style="line-height: 1.6; color: #6c757d;">${validatedData.message.replace(
+              /\n/g,
+              "<br>"
+            )}</p>
           </div>
           
           <p>Best regards,<br>The iVALT Team</p>
@@ -154,21 +186,21 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { message: 'Email sent successfully' },
+      { message: "Email sent successfully" },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Contact form error:', error);
-    
+    console.error("Contact form error:", error);
+
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: 'Validation failed', details: error.errors },
+        { error: "Validation failed", details: error.message },
         { status: 400 }
       );
     }
-    
+
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: "Failed to send email" },
       { status: 500 }
     );
   }
