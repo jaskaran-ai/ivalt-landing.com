@@ -2,33 +2,28 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 // Typography variant types
-type TypographyVariant = 
-  | "h1" 
-  | "h2" 
-  | "h3" 
-  | "h4" 
-  | "h5" 
+type TypographyVariant =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
   | "h6"
   | "body1"
   | "body2"
   | "caption"
   | "overline";
 
-type ColorVariant = 
+type ColorVariant =
   | "default"
   | "teal-primary"
-  | "navy-primary" 
+  | "navy-primary"
   | "light-teal"
   | "dark-navy"
   | "muted"
   | "accent";
 
-type WeightVariant = 
-  | "light"
-  | "normal" 
-  | "medium"
-  | "semibold"
-  | "bold";
+type WeightVariant = "light" | "normal" | "medium" | "semibold" | "bold";
 
 interface TypographyProps {
   variant?: TypographyVariant;
@@ -36,12 +31,12 @@ interface TypographyProps {
   weight?: WeightVariant;
   className?: string;
   children: React.ReactNode;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
 }
 
 const variantStyles: Record<TypographyVariant, string> = {
   h1: "text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-tight",
-  h2: "text-3xl lg:text-4xl xl:text-5xl leading-tight tracking-tight", 
+  h2: "text-3xl lg:text-4xl xl:text-5xl leading-tight tracking-tight",
   h3: "text-2xl lg:text-3xl xl:text-4xl leading-snug tracking-tight",
   h4: "text-xl lg:text-2xl xl:text-3xl leading-snug tracking-tight",
   h5: "text-lg lg:text-xl xl:text-2xl leading-snug",
@@ -56,7 +51,7 @@ const colorStyles: Record<ColorVariant, string> = {
   default: "text-foreground",
   "teal-primary": "text-teal-primary",
   "navy-primary": "text-navy-primary",
-  "light-teal": "text-light-teal", 
+  "light-teal": "text-light-teal",
   "dark-navy": "text-dark-navy",
   muted: "text-muted-foreground",
   accent: "text-accent-foreground",
@@ -65,14 +60,14 @@ const colorStyles: Record<ColorVariant, string> = {
 const weightStyles: Record<WeightVariant, string> = {
   light: "font-light",
   normal: "font-normal",
-  medium: "font-medium", 
+  medium: "font-medium",
   semibold: "font-semibold",
   bold: "font-bold",
 };
 
-const defaultElements: Record<TypographyVariant, keyof JSX.IntrinsicElements> = {
+const defaultElements = {
   h1: "h1",
-  h2: "h2", 
+  h2: "h2",
   h3: "h3",
   h4: "h4",
   h5: "h5",
@@ -85,7 +80,7 @@ const defaultElements: Record<TypographyVariant, keyof JSX.IntrinsicElements> = 
 
 export function Typography({
   variant = "body1",
-  color = "default", 
+  color = "default",
   weight = "normal",
   className,
   children,
@@ -93,7 +88,7 @@ export function Typography({
   ...props
 }: TypographyProps) {
   const Component = as || defaultElements[variant];
-  
+
   return (
     <Component
       className={cn(
@@ -147,5 +142,7 @@ export function Caption(props: Omit<TypographyProps, "variant">) {
 }
 
 export function Overline(props: Omit<TypographyProps, "variant">) {
-  return <Typography variant="overline" color="muted" weight="medium" {...props} />;
-} 
+  return (
+    <Typography variant="overline" color="muted" weight="medium" {...props} />
+  );
+}

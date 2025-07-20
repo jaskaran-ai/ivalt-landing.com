@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import { useEffect, useState, useRef } from "react";
+import { cn } from "@/lib/utils";
 
 interface FadeInOnScrollProps {
   children: React.ReactNode;
@@ -42,6 +42,8 @@ export function FadeInOnScroll({
               setIsVisible(true);
             }, delay);
 
+            console.log(timer);
+
             // If triggerOnce is true, unobserve after the first intersection
             if (triggerOnce) {
               observerRef.current?.unobserve(currentElement);
@@ -81,15 +83,13 @@ export function FadeInOnScroll({
     <div
       ref={elementRef}
       className={cn(
-        'transition-all transform',
-        isVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0',
+        "transition-all transform",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0",
         className
       )}
       style={{
         transitionDuration: `${duration}ms`,
-        transform: isVisible ? 'translateY(0)' : `translateY(${yOffset}px)`,
+        transform: isVisible ? "translateY(0)" : `translateY(${yOffset}px)`,
         // Note: The delay prop for CSS transition-delay is not used here
         // because the visibility (and thus the start of the animation)
         // is controlled by JavaScript (setTimeout).
@@ -98,4 +98,4 @@ export function FadeInOnScroll({
       {children}
     </div>
   );
-} 
+}
