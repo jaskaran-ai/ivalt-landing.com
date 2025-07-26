@@ -75,7 +75,7 @@ export default function IdentityCrisisSection() {
                 </p>
               </div>
               <div className="space-y-4">
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer group hover:scale-105">
+                <div className="bg-white rounded-xl p-6 border border-gray-200  cursor-pointer ">
                   <div className="flex items-center gap-3">
                     <Lock className="h-5 w-5 text-teal-primary group-hover:scale-110 transition-all duration-300" />
                     <p className="text-gray-700">
@@ -83,7 +83,7 @@ export default function IdentityCrisisSection() {
                     </p>
                   </div>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer group hover:scale-105">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none  cursor-pointer ">
                   <div className="flex items-center gap-3">
                     <Bot className="h-5 w-5 text-teal-primary group-hover:scale-110 transition-all duration-300" />
                     <p className="text-gray-700">
@@ -91,7 +91,7 @@ export default function IdentityCrisisSection() {
                     </p>
                   </div>
                 </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none hover:shadow-sm transition-all duration-300 cursor-pointer group hover:scale-105">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-none cursor-pointer ">
                   <div className="flex items-center gap-3">
                     <Shield className="h-5 w-5 text-teal-primary group-hover:scale-110 transition-all duration-300" />
                     <p className="text-gray-700">
