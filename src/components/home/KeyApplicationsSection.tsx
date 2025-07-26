@@ -25,11 +25,11 @@ export function ApplicationCard({
   href,
 }: ApplicationCardProps) {
   return (
-    <FadeInOnScroll delay={delay}>
-      <AnimatedShinyCard className="border-[0.4px] h-full">
-        <div className="flex flex-col h-full min-h-[400px]">
+    // <FadeInOnScroll delay={delay}>
+      // <AnimatedShinyCard className="border-[0.4px] h-full">
+        <div className="flex flex-col h-full min-h-[450px]   border-2 p-5 ">
           <div className="text-accent mb-4">
-            <Icon className="w-8 h-8 text-teal-primary transition-all duration-300 group-hover:scale-110 " />
+            <Icon className="w-8 h-8 text-teal-primary " />
           </div>
           <h3 className="text-xl font-semibold text-primary mb-2 transition-colors duration-300 group-hover:text-teal-700">
             {title}
@@ -58,8 +58,8 @@ export function ApplicationCard({
             <Link href={href}>Learn More</Link>
           </Button>
         </div>
-      </AnimatedShinyCard>
-    </FadeInOnScroll>
+      // {/* </AnimatedShinyCard> */}
+    // </FadeInOnScroll>
   );
 }
 
