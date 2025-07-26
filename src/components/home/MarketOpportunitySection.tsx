@@ -30,11 +30,11 @@ function CompetitiveAdvantageCard({
 }: CompetitiveAdvantageProps) {
   return (
     <div
-      className={`bg-[#FAF9F7] rounded-xl px-6 py-4 ${borderColor} shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer group`}
+      className={`bg-[#FAF9F7] rounded-xl px-6 py-4 ${borderColor}  cursor-pointer group`}
     >
       <div className="flex items-start gap-3">
         <Icon
-          className={`h-6 w-6 ${iconColor} mt-1 group-hover:scale-110 transition-all duration-300`}
+          className={`h-6 w-6 ${iconColor} mt-1  duration-300`}
         />
         <div>
           <p className="font-semibold text-gray-900">{title}</p>
