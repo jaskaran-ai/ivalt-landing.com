@@ -131,7 +131,7 @@ export default function MarketOpportunitySection() {
             description="Complete identity solution that works today and into the future"
           />
           <div className="flex justify-center mt-6 mb-12">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-white text-lg font-bold">
+            <div className="inline-flex items-center px-6 py-3  rounded-bl-2xl rounded-tr-2xl bg-primary text-white text-lg font-bold">
               One Unified Platform for ALL Use Cases
             </div>
           </div>
