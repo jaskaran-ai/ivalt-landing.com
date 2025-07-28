@@ -143,7 +143,7 @@ export default function MarketOpportunitySection() {
               <h3 className="text-2xl font-bold text-primary mb-6">
                 iVALT Competitive Advantages
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {competitiveAdvantages.map((advantage, index) => (
                   <CompetitiveAdvantageCard
                     key={index}
