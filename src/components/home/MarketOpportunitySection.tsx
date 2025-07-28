@@ -159,11 +159,11 @@ export default function MarketOpportunitySection() {
           </FadeInOnScroll>
 
           <FadeInOnScroll delay={0.2}>
-            <div className="bg-gradient-to-br from-teal-primary/10 to-primary/10 rounded-[30px] p-8 border-2 border-teal-primary/20">
-              <h3 className="text-2xl font-bold text-primary mb-6">
+            <div className="bg-gradient-to-br  from-teal-primary/20 to-primary/10 mt-9  rounded-[30px] px-4 pb-6 border-2 border-teal-primary/20">
+              <h3 className="text-2xl font-bold text-primary mb-5 py-4">
                 Why iVALT Now?
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-8">
                 {whyNowItems.map((item, index) => (
                   <WhyNowItem
                     key={index}
@@ -173,7 +173,7 @@ export default function MarketOpportunitySection() {
                   />
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-white/50 rounded-xl shadow-sm">
+              <div className="mt-8 p-4 bg-white/50 rounded-xl shadow-sm">
                 <p className="text-primary font-semibold text-center">
                   iVALT is positioned to become the global standard for identity
                   validation
