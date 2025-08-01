@@ -77,7 +77,7 @@ export default function MarketOpportunitySection() {
     },
     {
       icon: Lock,
-      title: "25-Factor Security",
+      title: "5-Factor Security",
       description: "Combines biometrics, location, randomness",
       borderColor: "border-l-4 border-primary",
       iconColor: "text-primary",
@@ -89,19 +89,19 @@ export default function MarketOpportunitySection() {
       borderColor: "border-l-4 border-teal-primary",
       iconColor: "text-teal-primary",
     },
-    {
-      icon: Smartphone,
-      title: "User-Friendly",
-      description: "No passwords, seamless mobile flow",
-      borderColor: "border-l-4 border-primary",
-      iconColor: "text-primary",
-    },
+    // {
+    //   icon: Smartphone,
+    //   title: "User-Friendly",
+    //   description: "No passwords, seamless mobile flow",
+    //   borderColor: "border-l-4 border-primary",
+    //   iconColor: "text-primary",
+    // },
     {
       icon: Zap,
       title: "Fast Integration",
       description: "OpenAPI, enterprise-ready",
-      borderColor: "border-l-4 border-teal-primary",
-      iconColor: "text-teal-primary",
+      borderColor: "border-l-4 border-primary",
+      iconColor: "text-primary",
     },
   ];
 

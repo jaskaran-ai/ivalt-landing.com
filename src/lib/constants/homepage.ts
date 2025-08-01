@@ -93,7 +93,7 @@ export const COMPETITIVE_ADVANTAGES = [
   },
   {
     icon: Lock,
-    title: "25-Factor Security",
+    title: "5-Factor Security",
     description: "Combines biometrics, location, randomness",
     borderColor: "border-l-4 border-primary",
     iconColor: "text-primary",
