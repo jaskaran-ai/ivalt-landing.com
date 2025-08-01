@@ -21,14 +21,14 @@ export default function IdentityCrisisSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mt-12">
           <FadeInOnScroll>
             <div className="bg-primary rounded-[30px] pt-4 z-0  h-96 relative shadow-lg">
-              <div className="flex items-center gap-3 mb-3 px-8 pt-4 ">
+              <div className="flex items-center gap-3 mb-3 px-8 py-2 ">
                 <AlertTriangle className="h-6 w-6 text-white" />
                 <h3 className="text-xl font-semibold text-white ">
                   Emerging Risks
                 </h3>
               </div>
               <div className="bg-white border-2 border-primary rounded-[30px] h-80 p-8 z-10">
-                <div className="space-y-4">
+                <div className="space-y-10 mt-2">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
@@ -64,7 +64,7 @@ export default function IdentityCrisisSection() {
 
           <FadeInOnScroll delay={0.2}>
             <div className="space-y-2">
-              <div className="bg-teal-primary/10 p-6 rounded-[30px] border-2 border-teal-primary/20">
+              <div className="bg-teal-primary/10 p-6 rounded-xl border-2 border-teal-primary/20">
                 <h3 className="text-2xl font-bold text-teal-primary mb-3">
                   <span className="text-primary">iVALT</span> Solution
                 </h3>
@@ -74,7 +74,7 @@ export default function IdentityCrisisSection() {
                   <strong>using existing infrastructure</strong>.
                 </p>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3 mt-3">
                 <div className="bg-white rounded-xl p-4 border border-gray-200  cursor-pointer ">
                   <div className="flex items-center gap-3">
                     <Lock className="h-5 w-5 text-teal-primary group-hover:scale-110 transition-all duration-300" />

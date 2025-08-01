@@ -25,7 +25,7 @@ export default function PlatformOverviewSection() {
         <div className="grid lg:grid-cols-2 gap-8 mt-12">
           {/* Human Authentication */}
           <FadeInOnScroll>
-            <div className="bg-white rounded-lg p-8 border-4 border-gray-100 transition-all duration-300">
+            <div className="bg-white rounded-lg p-8 pb-4 border-4 border-gray-100 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <Users className="h-8 w-8 text-teal-primary" />
                 <h3 className="text-xl font-semibold text-primary">
@@ -75,27 +75,28 @@ export default function PlatformOverviewSection() {
                   </div>
                 </div>
               </div>
-
-              <div className="bg-primary/10 p-4 rounded-lg">
-                <p className="text-primary font-semibold">
-                  Result: Dynamic, context-aware authentication that is{" "}
-                  <strong>nearly impossible to hack, even by AI</strong>.
-                </p>
-              </div>
             </div>
           </FadeInOnScroll>
 
           {/* IoT & AI Agent Authentication */}
           <FadeInOnScroll delay={0.1}>
-            <div className="bg-white rounded-lg p-2 border-4 border-gray-100 transition-all duration-300">
-              <Image src={IdentityValidation} alt="Identity Validation" />
-            </div>
-            <div className="bg-white rounded-lg p-4 border-4 border-gray-100 transition-all duration-300 mt-4">
-              <h3 className="text-xl font-semibold text-primary text-center">
-                Next Gen MFA for Everything
-              </h3>
+            <div className="flex flex-col justify-between h-full">
+              <div className="bg-white rounded-lg p-4 border-4 border-gray-100 transition-all duration-300">
+                <Image src={IdentityValidation} alt="Identity Validation" />
+              </div>
+              <div className="bg-white rounded-lg p-4 border-4 border-gray-100 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-primary text-center">
+                  Next Gen MFA for Everything
+                </h3>
+              </div>
             </div>
           </FadeInOnScroll>
+        </div>
+        <div className="bg-primary/5 p-6 rounded-lg mt-8 border-4 border-primary/5">
+          <p className="text-primary font-semibold text-center text-lg">
+            Result: Dynamic, context-aware authentication that is{" "}
+            <strong>nearly impossible to hack, even by AI</strong>.
+          </p>
         </div>
       </div>
     </section>

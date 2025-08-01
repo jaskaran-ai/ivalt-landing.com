@@ -33,9 +33,7 @@ function CompetitiveAdvantageCard({
       className={`bg-[#FAF9F7] rounded-xl px-6 py-4 ${borderColor}  cursor-pointer group`}
     >
       <div className="flex items-start gap-3">
-        <Icon
-          className={`h-6 w-6 ${iconColor} mt-1  duration-300`}
-        />
+        <Icon className={`h-6 w-6 ${iconColor} mt-1  duration-300`} />
         <div>
           <p className="font-semibold text-gray-900">{title}</p>
           <p className="text-gray-600 text-sm">{description}</p>
@@ -130,19 +128,19 @@ export default function MarketOpportunitySection() {
             title="Market Opportunity & Competitive Advantage"
             description="Complete identity solution that works today and into the future"
           />
-          <div className="flex justify-center mt-6 mb-12">
-            <div className="inline-flex items-center px-6 py-3  rounded-bl-2xl rounded-tr-2xl bg-primary text-white text-lg font-bold">
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex items-center px-6  text-primary text-lg font-bold">
               One Unified Platform for ALL Use Cases
             </div>
           </div>
         </FadeInOnScroll>
 
+        <h3 className="text-2xl font-bold text-primary mb-6">
+          iVALT Competitive Advantages
+        </h3>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-6">
-                iVALT Competitive Advantages
-              </h3>
               <div className="space-y-3">
                 {competitiveAdvantages.map((advantage, index) => (
                   <CompetitiveAdvantageCard
@@ -159,8 +157,8 @@ export default function MarketOpportunitySection() {
           </FadeInOnScroll>
 
           <FadeInOnScroll delay={0.2}>
-            <div className="bg-gradient-to-br  from-teal-primary/20 to-primary/10 mt-9  rounded-[30px] px-4 pb-6 border-2 border-teal-primary/20">
-              <h3 className="text-2xl font-bold text-primary mb-5 py-4">
+            <div className="bg-gradient-to-br  from-teal-primary/20 to-primary/10 rounded-[30px] px-6 py-6 border-2 border-teal-primary/20">
+              <h3 className="text-2xl font-bold text-primary py-4">
                 Why iVALT Now?
               </h3>
               <div className="space-y-8">
