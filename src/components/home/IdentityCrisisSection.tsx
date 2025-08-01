@@ -9,11 +9,11 @@ export default function IdentityCrisisSection() {
         <FadeInOnScroll>
           <SectionTitle
             title="The Identity Crisis"
-            description="Legacy identity methods—passwords, basic 2FA, device certificates—are not enough."
+            description="Legacy identity methods passwords, basic 2FA, device certificates are not enough."
           />
           <div className="flex justify-center mt-6">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 text-primary text-lg font-bold">
-              80-90% of cyberattacks start with stolen credentials
+              80-90% of cyber attacks start with stolen credentials
             </div>
           </div>
         </FadeInOnScroll>
@@ -70,7 +70,7 @@ export default function IdentityCrisisSection() {
                 </h3>
                 <p className="text-gray-700 text-lg">
                   iVALT delivers a mobile-centric/SaaS platform for verified
-                  trust across all digital interactions —{" "}
+                  trust across all digital interactions{" "}
                   <strong>using existing infrastructure</strong>.
                 </p>
               </div>
