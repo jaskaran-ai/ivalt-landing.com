@@ -14,7 +14,7 @@ export default function WhyIvalt() {
       <PioneeringContent />
       <FactorsOfIdentity />
       <PartnershipBenefits />
-      <ComingSoon />
+      {/* <ComingSoon /> */}
     </Container>
   );
 }

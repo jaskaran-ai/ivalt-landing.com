@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -98,14 +97,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Desktop CTA Button */}
-          {/* <div className="hidden md:flex md:items-center">
-            <Button className="bg-primary text-white hover:bg-primary/90">
-              Try Now
-            </Button>
-          </div> */}
-
-          {/* Mobile Menu */}
           <div className="md:hidden flex items-center">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>

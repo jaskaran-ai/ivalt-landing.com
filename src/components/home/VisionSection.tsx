@@ -38,7 +38,7 @@ export default function VisionSection() {
 
         <div className="mt-12 grid lg:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
-            <div className="bg-white rounded-[30px] p-8 border-none shadow-sm">
+            <div className="bg-white rounded-xl p-8 py-10 border-none shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <Target className="h-8 w-8 text-teal-primary" />
                 <h3 className="text-2xl font-bold text-teal-primary">
@@ -72,12 +72,10 @@ export default function VisionSection() {
               {futureApplications.map((app, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 border-sm shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer group"
+                  className="bg-white rounded-xl p-6 border-sm shadow-sm  cursor-pointer group"
                 >
                   <div className="flex items-center gap-3">
-                    <app.icon
-                      className={`h-6 w-6 ${app.color} group-hover:scale-110 transition-all duration-300`}
-                    />
+                    <app.icon className={`h-6 w-6 ${app.color} `} />
                     <p className="text-gray-700 transition-all duration-300">
                       {app.text}
                     </p>

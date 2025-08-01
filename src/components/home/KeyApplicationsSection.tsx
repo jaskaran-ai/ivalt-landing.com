@@ -26,39 +26,37 @@ export function ApplicationCard({
 }: ApplicationCardProps) {
   return (
     <FadeInOnScroll delay={delay}>
-      <AnimatedShinyCard className="border-[0.4px] h-full">
-        <div className="flex flex-col h-full min-h-[400px]">
-          <div className="text-accent mb-4">
-            <Icon className="w-8 h-8 text-teal-primary transition-all duration-300 group-hover:scale-110 " />
-          </div>
-          <h3 className="text-xl font-semibold text-primary mb-2 transition-colors duration-300 group-hover:text-teal-700">
-            {title}
-          </h3>
-          <p className="text-teal-primary mb-2 text-sm">{subtitle}</p>
-          <p className="text-gray-600 mb-4">{description}</p>
-          <div className="space-y-2 mb-4 flex-grow">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <div>
-                  <Check className="w-4 h-4 text-teal-primary transition-all duration-300 group-hover:scale-125" />
-                  {/* <div className="w-2 h-2 bg-teal-primary rounded-full transition-all duration-300 group-hover:scale-125" /> */}
-                </div>
-                <p
-                  className="text-sm text-gray-600"
-                  dangerouslySetInnerHTML={{ __html: feature }}
-                />
-              </div>
-            ))}
-          </div>
-          <Button
-            variant="shiny"
-            size="lg"
-            className="rounded-[15px] hover:cursor-pointer group-hover:bg-teal-primary hover:bg-teal-primary mt-auto"
-          >
-            <Link href={href}>Learn More</Link>
-          </Button>
+      <div className="flex flex-col h-full min-h-[450px] border-[0.4px] p-8 rounded-none border-gray-200">
+        <div className="text-accent mb-4">
+          <Icon className="w-8 h-8 text-teal-primary " />
         </div>
-      </AnimatedShinyCard>
+        <h3 className="text-xl font-semibold text-primary mb-2 transition-colors duration-300 group-hover:text-teal-700">
+          {title}
+        </h3>
+        <p className="text-teal-primary mb-2 text-sm">{subtitle}</p>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <div className="space-y-2 mb-4 flex-grow">
+          {features.map((feature, index) => (
+            <div key={index} className="flex items-center gap-3">
+              <div>
+                <Check className="w-4 h-4 text-teal-primary transition-all duration-300 group-hover:scale-125" />
+                {/* <div className="w-2 h-2 bg-teal-primary rounded-full transition-all duration-300 group-hover:scale-125" /> */}
+              </div>
+              <p
+                className="text-sm text-gray-600"
+                dangerouslySetInnerHTML={{ __html: feature }}
+              />
+            </div>
+          ))}
+        </div>
+        <Button
+          variant="shiny"
+          size="lg"
+          className="rounded-[15px] hover:cursor-pointer group-hover:bg-teal-primary hover:bg-teal-primary mt-auto"
+        >
+          <Link href={href}>Learn More</Link>
+        </Button>
+      </div>
     </FadeInOnScroll>
   );
 }

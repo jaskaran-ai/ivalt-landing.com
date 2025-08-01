@@ -21,11 +21,13 @@ export function PartnershipBenefitCard({
 }: PartnershipBenefitCardProps) {
   return (
     <FadeInOnScroll delay={delay}>
-      <AnimatedShinyCard className="border-[0.4px] bg-gradient-to-br from-white to-gray-50/30 hover:from-teal-50/30 hover:to-white transition-all duration-500 h-full">
+      <div className=" p-6 border-[0.4px] bg-gradient-to-br from-white to-gray-50/30 hover:from-teal-50/30 hover:to-white h-full">
+
+      {/* <AnimatedShinyCard className="border-[0.4px] bg-gradient-to-br from-white to-gray-50/30 hover:from-teal-50/30 hover:to-white h-full"> */}
         <div className="flex flex-col h-full min-h-[350px]">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 bg-teal-primary/10 rounded-full">
-              <Icon className="w-8 h-8 text-teal-primary transition-all duration-300 group-hover:scale-110" />
+              <Icon className="w-8 h-8 text-teal-primary " />
             </div>
             <div>
               <h3 className="text-xl font-bold text-primary mb-1 transition-colors duration-300 group-hover:text-teal-700">
@@ -43,7 +45,7 @@ export function PartnershipBenefitCard({
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-3">
                 <div className="mt-1">
-                  <Check className="w-5 h-5 text-teal-primary transition-all duration-300 group-hover:scale-110" />
+                  <Check className="w-5 h-5 text-teal-primary " />
                 </div>
                 <p className="text-gray-700 font-medium leading-relaxed">
                   {feature}
@@ -65,7 +67,9 @@ export function PartnershipBenefitCard({
             </Button>
           </div> */}
         </div>
-      </AnimatedShinyCard>
+      </div>
+
+      {/* </AnimatedShinyCard> */}
     </FadeInOnScroll>
   );
 }

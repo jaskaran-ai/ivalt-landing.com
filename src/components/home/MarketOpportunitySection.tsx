@@ -31,12 +31,10 @@ function CompetitiveAdvantageCard({
 }: CompetitiveAdvantageProps) {
   return (
     <div
-      className={`bg-[#FAF9F7] rounded-xl px-6 py-4 ${borderColor} shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer group`}
+      className={`bg-[#FAF9F7] rounded-xl px-6 py-4 ${borderColor}  cursor-pointer group`}
     >
       <div className="flex items-start gap-3">
-        <Icon
-          className={`h-6 w-6 ${iconColor} mt-1 group-hover:scale-110 transition-all duration-300`}
-        />
+        <Icon className={`h-6 w-6 ${iconColor} mt-1  duration-300`} />
         <div>
           <p className="font-semibold text-gray-900">{title}</p>
           <p className="text-gray-600 text-sm">{description}</p>
@@ -138,20 +136,20 @@ export default function MarketOpportunitySection() {
             title="Market Opportunity & Competitive Advantage"
             description="Complete identity solution that works today and into the future"
           />
-          <div className="flex justify-center mt-6 mb-12">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-white text-lg font-bold">
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex items-center px-6  text-primary text-lg font-bold">
               One Unified Platform for ALL Use Cases
             </div>
           </div>
         </FadeInOnScroll>
 
+        <h3 className="text-2xl font-bold text-primary mb-6">
+          iVALT Competitive Advantages
+        </h3>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-6">
-                iVALT Competitive Advantages
-              </h3>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {competitiveAdvantages.map((advantage, index) => (
                   <CompetitiveAdvantageCard
                     key={index}
@@ -167,11 +165,11 @@ export default function MarketOpportunitySection() {
           </FadeInOnScroll>
 
           <FadeInOnScroll delay={0.2}>
-            <div className="bg-gradient-to-br from-teal-primary/10 to-primary/10 rounded-[30px] p-8 border-2 border-teal-primary/20">
-              <h3 className="text-2xl font-bold text-primary mb-6">
+            <div className="bg-gradient-to-br  from-teal-primary/20 to-primary/10 rounded-[30px] px-6 py-6 border-2 border-teal-primary/20">
+              <h3 className="text-2xl font-bold text-primary py-4">
                 Why iVALT Now?
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-8">
                 {whyNowItems.map((item, index) => (
                   <WhyNowItem
                     key={index}
@@ -181,7 +179,7 @@ export default function MarketOpportunitySection() {
                   />
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-white/50 rounded-xl shadow-sm">
+              <div className="mt-8 p-4 bg-white/50 rounded-xl shadow-sm">
                 <p className="text-primary font-semibold text-center">
                   iVALT is positioned to become the global standard for identity
                   validation
