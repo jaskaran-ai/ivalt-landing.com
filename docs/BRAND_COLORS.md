@@ -8,6 +8,7 @@
 | Navy Primary | `#1E4884` | `var(--navy-primary)` | `navy-primary` |
 | Light Teal | `#4DD8AD` | `var(--light-teal)` | `light-teal` |
 | Dark Navy | `#0F3366` | `var(--dark-navy)` | `dark-navy` |
+| Background Primary | `#FAF9F7` | `var(--bg-primary)` | `bg-primary` |
 
 ## Usage in CSS
 
@@ -17,6 +18,7 @@
   background-color: var(--teal-primary);
   color: var(--navy-primary);
   border-color: var(--light-teal);
+  background-color: var(--bg-primary);
 }
 ```
 
@@ -26,6 +28,7 @@
   background-color: #30B68E;
   color: #1E4884;
   border-color: #4DD8AD;
+  background-color: #FAF9F7;
 }
 ```
 
@@ -37,6 +40,7 @@
 <div class="bg-navy-primary">Navy background</div>
 <div class="bg-light-teal">Light teal background</div>
 <div class="bg-dark-navy">Dark navy background</div>
+<div class="bg-primary">Primary background</div>
 ```
 
 ### Text Colors
@@ -106,6 +110,16 @@ const MyComponent = () => (
 </div>
 ```
 
+### Primary Background Layout
+```html
+<div class="bg-primary min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-navy-primary text-2xl font-bold">Page Title</h1>
+    <p class="text-gray-700">Content with primary background</p>
+  </div>
+</div>
+```
+
 ## Dark Mode Support
 
 The colors will automatically work in dark mode as they use fixed hex values. If you need dark mode variants, you can extend the CSS:
@@ -114,5 +128,6 @@ The colors will automatically work in dark mode as they use fixed hex values. If
 .dark {
   --teal-primary: #4DD8AD; /* Lighter teal for dark mode */
   --navy-primary: #5A8BC4; /* Lighter navy for dark mode */
+  --bg-primary: #1a1a1a; /* Dark background for dark mode */
 }
 ``` 

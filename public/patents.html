@@ -1,268 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iValt Registration</title>
+    <title>Patent Portfolio - iVALT</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "teal-primary": "#30B68E",
+              "navy-primary": "#1E4884",
+              "light-teal": "#4DD8AD",
+              "dark-navy": "#0F3366",
+              "bg-primary": "#FAF9F7",
+            },
+          },
+        },
+      };
+    </script>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
       body {
-        background: linear-gradient(
-          84deg,
-          rgba(1, 24, 68, 1) 0%,
-          rgba(0, 61, 116, 1) 62%,
-          rgba(0, 181, 202, 1) 100%
-        );
-        font-family: "Noto Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-style: normal;
-        font-variation-settings: "wdth" 100;
+        font-family: "Inter", sans-serif;
       }
 
-      .glass-effect {
-        background: rgba(46, 46, 46, 0.601);
-        border-radius: 10px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #0f3366 0%,
+          #1e4884 50%,
+          #30b68e 100%
+        );
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 0px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
-      .h1 {
-        font: 3.625em / 1em industry-medium;
-        color: #91e6c6;
-      }
-
-      .button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 20px;
-        background-color: rgba(255, 255, 255, 0.1);
+      .patent-badge {
+        background: linear-gradient(135deg, #30b68e, #4dd8ad);
         color: white;
-        border: 2px solid transparent;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-size: 12px;
+        display: inline-block;
+        margin: 3px;
       }
 
-      .button:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          120deg,
-          transparent,
-          rgba(255, 255, 255, 0.3),
-          transparent
-        );
-        transition: all 0.6s;
-      }
-
-      .button:hover:before {
-        left: 100%;
-      }
-
-      .button:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-color: #91e6c6;
-        color: #91e6c6;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .bg-grid {
+      .grid-pattern {
         background-image: linear-gradient(
-            to right,
             rgba(255, 255, 255, 0.05) 1px,
             transparent 1px
           ),
-          linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.05) 1px,
-            transparent 1px
-          );
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
         background-size: 20px 20px;
-        mask-image: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 1),
-          rgba(0, 0, 0, 0)
-        );
-        opacity: 0.7;
-      }
-      .text-ivalt {
-        color: #4dd2a5;
       }
 
-      .input-field {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: white;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
       }
 
-      .input-field:focus {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #91e6c6;
-        box-shadow: 0 0 0 2px rgba(145, 230, 198, 0.2);
-        outline: none;
-      }
-
-      .input-field::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      .label-text {
-        color: #91e6c6;
-        font-size: 0.875rem;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-      }
-
-      .iti {
-        width: 100%;
-      }
-      .iti__flag-container:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
-      .iti__selected-flag {
-        background-color: rgba(255, 255, 255, 0.05) !important;
-      }
-      .iti__country-list {
-        background-color: #1a2942;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .iti__country {
-        color: white;
-      }
-      .iti__country:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
-      .iti__selected-flag:focus {
-        background-color: rgba(255, 255, 255, 0.15) !important;
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
-  <body>
-    <div class="text-white min-h-screen">
-      <div class="bg-grid absolute inset-0"></div>
-      <div class="container mx-auto px-4 py-16">
+  <body class="bg-primary min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <div class="max-w-5xl mx-auto">
         <!-- Header -->
-        <div class="text-center mb-16">
-          <div
-            class="text-4xl font-bold mb-2 flex justify-center items-center mb-4"
-          >
-            <img
-              src="https://ivalt.com/wp-content/themes/t466jHjHxHAGxHAGqd_ivalt/images/logohome.png"
-              alt="iVALT Logo"
-              class="w-[280px] text-center"
-            />
+        <div class="text-center mb-12 fade-in">
+          <div class="flex justify-center mb-6">
+            <img src="/images/logo.png" alt="iVALT Logo" class="h-16 w-auto" />
           </div>
-          <p class="font-mono text-gray-300 max-w-2xl mx-auto text-left mt-8">
-            Our patent portfolio represents our commitment to advancing technology in streaming, IoT, and security. Each patent demonstrates our dedication to creating innovative solutions that shape the future of digital infrastructure. This website is provided to satisfy the virtual patent marking provisions of various jurisdictions, including 35 U.S.C. § 287(a) of the patent laws of the United States of America.
+          <h1 class="text-3xl md:text-4xl font-bold text-navy-primary mb-4">
+            Patent Portfolio
+          </h1>
+          <p
+            class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed"
+          >
+            Our patent portfolio represents our commitment to advancing
+            technology in streaming, IoT, and security. Each patent demonstrates
+            our dedication to creating innovative solutions that shape the
+            future of digital infrastructure.
           </p>
-          
-            <p class="font-mono text-gray-300 max-w-2xl mx-auto mt-4 text-left">
-            iVALT Mobile Application may be protected by and/or used in the practice of one or more of the following United States patents: <span class="bg-gray-700 text-gray-300 text-sm px-2 py-1 rounded">10,491,588;</span> <span class="bg-gray-700 text-gray-300 text-sm px-2 py-1 rounded">10,931,667;</span> <span class="bg-gray-700 text-gray-300 text-sm px-2 py-1 rounded">11,115,403; 11,736,475;</span> and <span class="bg-gray-700 text-gray-300 text-sm px-2 py-1 rounded">12,028,335</span>.
-            </p>
         </div>
 
-        <!-- Cards -->
-        <!--<div class="mx-auto w-full flex justify-center">-->
-        <!--  <div-->
-        <!--    id="patentsGrid"-->
-        <!--    class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-3xl"-->
-        <!--  ></div>-->
-        <!--</div>-->
+        <!-- Main Content -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8 fade-in">
+          <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">Legal Notice</h2>
+            <p class="text-sm md:text-base text-gray-700 max-w-3xl mx-auto">
+              This website is provided to satisfy the virtual patent marking
+              provisions of various jurisdictions, including 35 U.S.C. § 287(a)
+              of the patent laws of the United States of America.
+            </p>
+          </div>
+
+          <!-- Patent Information -->
+          <div
+            class="bg-gradient-to-r from-teal-primary to-light-teal rounded-xl p-6 text-white"
+          >
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold mb-3">
+                iVALT Mobile Application Patents
+              </h3>
+              <p class="text-sm opacity-90">
+                The iVALT Mobile Application may be protected by and/or used in
+                the practice of one or more of the following United States
+                patents:
+              </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+              <span class="patent-badge bg-white text-teal-primary"
+                >10,491,588</span
+              >
+              <span class="patent-badge bg-white text-teal-primary"
+                >10,931,667</span
+              >
+              <span class="patent-badge bg-white text-teal-primary"
+                >11,115,403</span
+              >
+              <span class="patent-badge bg-white text-teal-primary"
+                >11,736,475</span
+              >
+              <span class="patent-badge bg-white text-teal-primary"
+                >12,028,335</span
+              >
+            </div>
+
+            <div class="text-center">
+              <p class="text-xs opacity-80">
+                These patents cover various aspects of our identity validation
+                and security technologies.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technology Areas -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div
+            class="bg-white rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300 shadow-md"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-teal-primary to-light-teal rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 mb-2">
+              Streaming Services
+            </h3>
+            <p class="text-gray-600 text-xs">
+              Advanced streaming technology solutions for modern digital content
+              delivery
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300 shadow-md"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-navy-primary to-teal-primary rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 mb-2">
+              IoT Infrastructure
+            </h3>
+            <p class="text-gray-600 text-xs">
+              Innovative IoT infrastructure and device communication protocols
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300 shadow-md"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-light-teal to-teal-primary rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 mb-2">
+              Security Systems
+            </h3>
+            <p class="text-gray-600 text-xs">
+              Secure password management and authentication systems
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-4 text-center hover:scale-105 transition-transform duration-300 shadow-md"
+          >
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-dark-navy to-navy-primary rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 mb-2">
+              Identity Sharing
+            </h3>
+            <p class="text-gray-600 text-xs">
+              Seamless identity sharing and authentication across multiple
+              devices
+            </p>
+          </div>
+        </div>
 
         <!-- Footer -->
-        <!--<div class="mt-20 text-center">-->
-        <!--  <p class="text-gray-300 max-w-3xl mx-auto">-->
-        <!--    Our patent portfolio represents our commitment to advancing-->
-        <!--    technology in streaming, IoT, and security. Each patent demonstrates-->
-        <!--    our dedication to creating innovative solutions that shape the-->
-        <!--    future of digital infrastructure.-->
-        <!--  </p>-->
-        <!--</div>-->
+        <div class="text-center">
+          <div class="bg-white rounded-2xl p-6 shadow-md">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Innovation at the Core
+            </h3>
+            <p
+              class="text-sm text-gray-700 max-w-2xl mx-auto leading-relaxed mb-6"
+            >
+              Our patent portfolio reflects our commitment to pushing the
+              boundaries of technology. Each patent represents years of
+              research, development, and innovation in creating solutions that
+              address real-world challenges in digital security and identity
+              management.
+            </p>
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-2 bg-teal-primary hover:bg-navy-primary text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+              Learn More About Our Technology
+            </a>
+          </div>
+        </div>
       </div>
-
-      <!--<script>-->
-      <!--  const patents = [-->
-      <!--    {-->
-      <!--      id: 1,-->
-      <!--      title: "Streaming Services",-->
-      <!--      number: "10,931,667",-->
-      <!--      description:-->
-      <!--        "Advanced streaming technology solutions for modern digital content delivery",-->
-      <!--      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>`,-->
-      <!--      color: "from-pink-500 to-rose-500",-->
-      <!--    },-->
-      <!--    {-->
-      <!--      id: 2,-->
-      <!--      title: "Internet of Things (IoT)",-->
-      <!--      number: "11,115,403",-->
-      <!--      description:-->
-      <!--        "Innovative IoT infrastructure and device communication protocols",-->
-      <!--      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>`,-->
-      <!--      color: "from-purple-500 to-indigo-500",-->
-      <!--    },-->
-      <!--    {-->
-      <!--      id: 3,-->
-      <!--      title: "Password Management",-->
-      <!--      number: "10,491,588",-->
-      <!--      description:-->
-      <!--        "Secure password management and authentication systems",-->
-      <!--      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,-->
-      <!--      color: "from-green-500 to-emerald-500",-->
-      <!--    },-->
-      <!--    {-->
-      <!--      id: 4,-->
-      <!--      title: "Identity Release & Sharing between Devices",-->
-      <!--      number: "11,736,475",-->
-      <!--      description:-->
-      <!--        "Seamless identity sharing and authentication across multiple devices",-->
-      <!--      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share-2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>`,-->
-      <!--      color: "from-yellow-500 to-amber-500",-->
-      <!--    },-->
-      <!--  ];-->
-
-      <!--  const patentsGrid = document.getElementById("patentsGrid");-->
-
-      <!--  patents.forEach((patent) => {-->
-      <!--    const card = `-->
-      <!--    <div class="glass-effect bg-gray-800 border-none overflow-hidden group hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">-->
-      <!--      <div class="h-2 w-full bg-gradient-to-r ${patent.color}"></div>-->
-      <!--      <div class="p-4">-->
-      <!--        <div class="flex items-center gap-4">-->
-      <!--          <div class="p-3 rounded-xl bg-gradient-to-br ${patent.color} text-white transform group-hover:scale-110 transition-transform duration-300">-->
-      <!--            <span class="text-2xl">${patent.icon}</span>-->
-      <!--          </div>-->
-      <!--          <div>-->
-      <!--            <h3 class="text-xl text-white">${patent.title}</h3>-->
-      <!--            <span class="mt-2 bg-gray-700 text-gray-300 text-sm px-2 py-1 rounded">${patent.number}</span>-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--        <p class="mt-4 text-base text-gray-400">${patent.description}</p>-->
-      <!--      </div>-->
-      <!--    </div>-->
-      <!--  `;-->
-      <!--    patentsGrid.innerHTML += card;-->
-      <!--  });-->
-      <!--</script>-->
     </div>
   </body>
 </html>
