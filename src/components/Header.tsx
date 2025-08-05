@@ -20,7 +20,7 @@ export const navItems = [
     href: "/",
   },
   {
-    label: "Why Ivalt",
+    label: "Why iVALT",
     href: "/why-ivalt",
   },
   {
