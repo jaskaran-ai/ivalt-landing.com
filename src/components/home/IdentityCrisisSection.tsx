@@ -9,7 +9,7 @@ export default function IdentityCrisisSection() {
         <FadeInOnScroll>
           <SectionTitle
             title="The Identity Crisis"
-            description="Legacy identity methods passwords, basic 2FA, device certificates are not enough."
+            description="Legacy identity methods passwords, 2FA, and tokens are not enough."
           />
           <div className="flex justify-center mt-6">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 text-primary text-lg font-bold">
@@ -32,14 +32,14 @@ export default function IdentityCrisisSection() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
-                      <strong>$10.5 trillion</strong> projected cyber crime
-                      costs annually in 2025
+                      <strong>$10.5 trillion</strong> cyber crime
+                      annually 
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
-                      IoT devices now outnumber humans, often with{" "}
+                      IoT devices and AI agents now outnumber humans, using vulnerable legacy identity methods
                       <strong>poor security</strong>
                     </p>
                   </div>
