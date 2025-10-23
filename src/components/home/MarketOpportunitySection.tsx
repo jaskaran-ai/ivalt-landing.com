@@ -78,7 +78,7 @@ export default function MarketOpportunitySection() {
     {
       icon: Lock,
       title: "5-Factor Security",
-      description: "Combines biometrics, location, randomness",
+      description: "Combines biometrics, PKI and Context",
       borderColor: "border-l-4 border-primary",
       iconColor: "text-primary",
     },
@@ -103,6 +103,13 @@ export default function MarketOpportunitySection() {
       borderColor: "border-l-4 border-primary",
       iconColor: "text-primary",
     },
+    {
+      icon: Zap,
+      title: "Authenticate Anywhere®",
+      description: "Mobile-Centric Identity Verification",
+      borderColor: "border-l-4 border-primary",
+      iconColor: "text-primary",
+    },
   ];
 
   const whyNowItems = [
@@ -118,12 +125,12 @@ export default function MarketOpportunitySection() {
     },
     {
       icon: Eye,
-      text: "Deepfake attacks becoming mainstream threat",
+      text: "Deepfake attacks becoming mainstream threats",
       iconColor: "text-primary",
     },
     {
       icon: Globe,
-      text: "Need for universal identity standards",
+      text: "Data exfiltration after 'valid access'  is 50% of all cybersecurity losses",
       iconColor: "text-primary",
     },
   ];
@@ -133,7 +140,7 @@ export default function MarketOpportunitySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInOnScroll>
           <SectionTitle
-            title="Market Opportunity & Competitive Advantage"
+            title="iVALT's Advantages"
             description="Complete identity solution that works today and into the future"
           />
           <div className="flex justify-center mb-12">
@@ -181,8 +188,7 @@ export default function MarketOpportunitySection() {
               </div>
               <div className="mt-8 p-4 bg-white/50 rounded-xl shadow-sm">
                 <p className="text-primary font-semibold text-center">
-                  iVALT is positioned to become the global standard for identity
-                  validation
+                  iVALT is positioned to meet the demand of AI, while stopping today's  cyber threats
                 </p>
               </div>
             </div>

@@ -9,15 +9,15 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <FadeInOnScroll>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-primary/10 text-teal-primary text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-primary/10 text-teal-primary  font-medium mb-6">
               Identity Validation Platform®
             </div>
             <h1 className="text-5xl font-bold tracking-tight text-primary mb-6">
-              <span className="underline decoration-teal-primary bg-amber-300">
+              <span className="underline decoration-teal-primary bg-amber-800">
                 iVALT – Identity Validation Platform®
               </span>
             </h1>
-            <h2 className="text-4xl font-bold text-teal-primary mb-8">
+            <h2 className="text-4xl  bg-amber-600 font-bold text-teal-primary mb-8">
               Authenticate Anywhere® & ANYONE
             </h2>
             <p className="mt-6 md:text-xl text-lg text-gray-600 max-w-4xl mx-auto">

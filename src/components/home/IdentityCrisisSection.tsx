@@ -9,7 +9,7 @@ export default function IdentityCrisisSection() {
         <FadeInOnScroll>
           <SectionTitle
             title="The Identity Crisis"
-            description="Legacy identity methods passwords, 2FA, and tokens are not enough."
+            description="Legacy identity methods using passwords, 2FA, and tokens are not enough."
           />
           <div className="flex justify-center mt-6">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 text-primary text-lg font-bold">
