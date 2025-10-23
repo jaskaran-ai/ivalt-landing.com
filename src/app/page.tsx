@@ -19,7 +19,7 @@ export default function Homepage2() {
     <>
       <HeroSection />
       <IdentityCrisisSection />
-      <PlatformOverviewSection />
+      {/* <PlatformOverviewSection /> */}
       <KeyApplicationsSection />
       <VisionSection />
       <MarketOpportunitySection />

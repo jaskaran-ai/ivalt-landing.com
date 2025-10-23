@@ -3,9 +3,10 @@ import Container from "../Container";
 import { Check } from "lucide-react";
 
 const Points = [
-  "Stopping Stolen Credentials",
-  "Stopping Social Engineering and AI Deepfakes",
-  "Protecting Documents with Highly Restrictive Access Controls",
+  "Create the Strongest Human-Bound Identity to Protect AI Users, Control Agents and Maintain Accountability",
+  "Stop Data Exfiltration in Existing “Access Control” Systems with an ACTION CONTROL Layer of Identity (Loop-Back for Strong, Independent ID Verification before Damaging Actions)",
+  "Empower Real-Time (On-Demand) Identity to End Social Engineering and AI Deepfakes",
+  "Enable User Control of Documents Forever (restrict access, apply rights controls, limit access timing, and control file propagation"
 ];
 
 export default function PioneeringContent() {

@@ -11,6 +11,7 @@ const Points = [
   "Proactive Agent Identity",
   "Stops Social Engineering & Deepfakes",
   "Highly Secure Account Access",
+  "1-Click KYC (Customer Support and Helpdesk)"
 ];
 
 export default function OnDemandID() {
