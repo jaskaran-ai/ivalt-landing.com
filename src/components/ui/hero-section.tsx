@@ -45,10 +45,15 @@ export function HeroSection() {
         <section className="relative bg-[#FAF9F7] z-10">
           <div className="relative py-10 md:py-20 md:pb-30">
             <div aria-hidden className="absolute inset-0 -z-10 size-full" />
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-xl ">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
+                <div className="w-full bg-gradient-to-r from-[#0A2358] via-[#20315e] to-[#6d71ae] py-4">
+                  <h1 className="text-center text-white text-4xl font-bold mb-2">Human-Bound Identity</h1>
+                  <span className="block text-center text-[#4FFFB0] text-xl italic">Securing AI. Stopping Today&apos;s Threats.</span>
+                </div>
                 <AnimatedGroup variants={transitionVariants}>
-                  <Link
+
+                  {/* <Link
                     href="/solutions"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                   >
@@ -67,8 +72,8 @@ export function HeroSection() {
                         </span>
                       </div>
                     </div>
-                  </Link>
-                  <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-bold">
+                  </Link> */}
+                  {/* <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-bold">
                     <span className="text-teal-primary">iVALT</span>{" "}
                     <span className="text-primary">Stops</span>
                     <div>
@@ -83,7 +88,7 @@ export function HeroSection() {
                       1-Click to Zero Trust{" "}
                     </h2>
                     <span className="text-2xl font-normal mt-3">™</span>
-                  </div>
+                  </div> */}
                   <p className="mx-auto mt-4 max-w-2xl text-balance text-lg text-gray-600">
                     iVALT{"’"}s Identity Validation Platform® is a Revolutionary
                     Approach to Stop Identity Fraud for All Digital Interactions
