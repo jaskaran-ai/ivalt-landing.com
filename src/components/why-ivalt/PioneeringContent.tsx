@@ -7,7 +7,7 @@ import Image from "next/image";
 const Points = [
   "Best Available Technologies Widely available at Any Point in Time",
   "A Platform Approach to Enable Customization for the Unique Needs of Customers",
-  "Biometrics and Device ID PLUS Contextual Factors and Dynamic Variables to Enable Definitive Identity Anywhere and for Any Application",
+  "Biometrics and Device PKI PLUS Contextual Factors and Dynamic Variables to Enable Definitive Identity Anywhere and for Any Application",
   "Control of their Identity goes back into the Hands of Individuals",
   "A 1-Click User Experience for All Use Cases",
 ];
