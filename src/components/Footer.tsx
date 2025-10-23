@@ -17,7 +17,7 @@ import { Button } from "./ui/button";
 const footerLinks = {
   products: [
     {
-      label: "Universal Biometric ID®",
+      label: "AI-Anchor ID™",
       href: "/solutions/universalid",
     },
     { label: "On-Demand ID™", href: "/solutions/ondemandid" },
