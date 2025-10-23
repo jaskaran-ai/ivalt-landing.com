@@ -9,86 +9,92 @@ import {
   DollarSign,
   BarChart3,
   ArrowRight,
+  // icons,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
 const Benefits = [
+
+  
   {
     icon: Shield,
     title: "Fraud Reduction",
     subtitle: "Across the Board",
-    description:
-      "Comprehensive security through multiple authentication factors that make stolen credentials worthless.",
-    features: [
-      "Biometric authentication with face and fingerprint recognition",
-      "25+ security factors for maximum protection",
-      "Real-time verification and threat detection",
-    ],
+    description: "Biometrics with Device PKI, Augmented by Customizable Context",
+
+      // "Comprehensive security through multiple authentication factors that make stolen credentials worthless.",
+    // features: [
+    //   "Biometric authentication with face and fingerprint recognition",
+    //   "25+ security factors for maximum protection",
+    //   "Real-time verification and threat detection",
+    // ],
     delay: 0,
   },
   {
     icon: MousePointer,
     title: "Frictionless UX",
     subtitle: "User Experience",
-    description:
-      "Simplified authentication process that enhances user satisfaction while maintaining security.",
-    features: [
-      "1-Click authentication",
-      "No passwords or complex procedures required",
-      "Seamless integration",
-    ],
+    description: "1-Click ID verification for all use cases",
+
+      // "Simplified authentication process that enhances user satisfaction while maintaining security.",
+    // features: [
+    //   "1-Click authentication",
+    //   "No passwords or complex procedures required",
+    //   "Seamless integration",
+    // ],
     delay: 0.1,
   },
   {
     icon: TrendingUp,
-    title: "New Revenue Opportunities",
-    subtitle: "Business Growth",
+    title: "AI Identity ",
+    subtitle: "Unassailable Control",
     description:
-      "Unlock new revenue streams with premium identity services and advanced security solutions.",
-    features: [
-      "Premium Identity-as-a-Service offerings",
-      "Advanced Document Security solutions",
-    ],
+      "Patented End-to-End PKI Identity for Control and Accountability",
+    // features: [
+    //   "Premium Identity-as-a-Service offerings",
+    //   "Advanced Document Security solutions",
+    // ],
     delay: 0.2,
   },
   {
     icon: Users,
     title: "All Key Use Cases",
     subtitle: "Comprehensive Coverage",
-    description:
-      "Support for all critical business operations and customer interaction workflows.",
-    features: [
-      "Alert responses",
-      "User actions",
-      "Customer service",
-      "Data access",
-    ],
+    description: "Logins, Phone Caller ID, Documents, AI Agents, IOT Devices, Phishing Attacks",
+      // "Support for all critical business operations and customer interaction workflows.",
+    // features: [
+    //   "Alert responses",
+    //   "User actions",
+    //   "Customer service",
+    //   "Data access",
+    // ],
     delay: 0.3,
   },
   {
     icon: DollarSign,
-    title: "Simple Business Model",
+    title: "Reduce IAM Risks",
     subtitle: "Transparent Pricing",
-    description:
-      "Straightforward pricing structure that makes budgeting and scaling predictable.",
-    features: [
-      "Per user per month transparent pricing",
-      "No hidden fees or complex licensing",
-      "Scalable plans for businesses of all sizes",
-    ],
+    description: "PKI coverage for all enterprise applications through SAML Federation",
+      // "Straightforward pricing structure that makes budgeting and scaling predictable.",
+    // features: [
+    //   "Per user per month transparent pricing",
+    //   "No hidden fees or complex licensing",
+    //   "Scalable plans for businesses of all sizes",
+    // ],
     delay: 0.4,
   },
   {
     icon: BarChart3,
-    title: "Constant Optimization",
+    title: "Future-proof ",
     subtitle: "AI-Driven Enhancement",
-    description:
-      "Continuous improvement through machine learning algorithms that adapt to your business needs.",
-    features: [
-      "Per use case optimization and customization",
-      "AI/ML models that learn and improve over time",
-    ],
+    description: "API- based, Adaptable to Any Identity Technology over Time, Platform - Based architecture",
+
+      // "Continuous improvement through machine learning algorithms that adapt to your business needs.",
+    // features: [
+    //   "Per use case optimization and customization",
+    //   "AI/ML models that learn and improve over time",
+    // ],
     delay: 0.5,
   },
 ];
@@ -99,13 +105,13 @@ export default function PartnershipBenefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInOnScroll>
           <SectionTitle
-            title="Benefits We Bring to a Partnership"
+            title="Benefits We Bring to Our Partners"
             description="Transform your business with our comprehensive identity validation platform that delivers measurable value across multiple dimensions."
           />
         </FadeInOnScroll>
 
         <div className="mt-12 grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {Benefits.map((benefit, index) => (
+          {Benefits?.map((benefit, index) => (
             <PartnershipBenefitCard
               key={index}
               icon={benefit.icon}

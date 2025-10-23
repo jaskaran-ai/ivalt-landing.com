@@ -16,7 +16,7 @@ export function PartnershipBenefitCard({
   title,
   subtitle,
   description,
-  features,
+  // features,
   delay = 0,
 }: PartnershipBenefitCardProps) {
   return (
@@ -41,7 +41,7 @@ export function PartnershipBenefitCard({
 
           <p className="text-gray-700 mb-6 leading-relaxed">{description}</p>
 
-          <div className="space-y-3 mb-6 flex-grow">
+          {/* <div className="space-y-3 mb-6 flex-grow">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-3">
                 <div className="mt-1">
@@ -52,7 +52,7 @@ export function PartnershipBenefitCard({
                 </p>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* <div className="pt-4 border-t border-gray-100 mt-auto">
             <Button
