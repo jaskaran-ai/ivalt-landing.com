@@ -45,11 +45,11 @@ export function HeroSection() {
         <section className="relative bg-[#FAF9F7] z-10">
           <div className="relative py-10 md:py-20 md:pb-30">
             <div aria-hidden className="absolute inset-0 -z-10 size-full" />
-            <div className="mx-auto max-w-xl ">
+            <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                <div className="w-full bg-gradient-to-r from-[#0A2358] via-[#20315e] to-[#6d71ae] py-4">
-                  <h1 className="text-center text-white text-4xl font-bold mb-2">Human-Bound Identity</h1>
-                  <span className="block text-center text-[#4FFFB0] text-xl italic">Securing AI. Stopping Today&apos;s Threats.</span>
+                <div className="w-full  py-4">
+                  <h1 className="text-center text-navy-primary  text-5xl font-bold mb-2">Human-Bound Identity</h1>
+                  <span className="block text-center text-[#0b8a51] text-2xl italic">Securing AI. Stopping Today&apos;s Threats.</span>
                 </div>
                 <AnimatedGroup variants={transitionVariants}>
 
