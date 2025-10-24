@@ -104,11 +104,11 @@ export default function MarketOpportunitySection() {
       iconColor: "text-primary",
     },
     {
-      icon: Zap,
+      icon: Globe,
       title: "Authenticate Anywhere®",
       description: "Mobile-Centric Identity Verification",
-      borderColor: "border-l-4 border-primary",
-      iconColor: "text-primary",
+      borderColor: "border-l-4 border-teal-primary",
+      iconColor: "text-teal-primary",
     },
   ];
 

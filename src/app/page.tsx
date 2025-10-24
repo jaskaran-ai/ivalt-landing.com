@@ -1,12 +1,13 @@
 import { HeroSection } from "@/components/ui/hero-section";
 import {
   IdentityCrisisSection,
-  PlatformOverviewSection,
-  KeyApplicationsSection,
-  VisionSection,
+  // PlatformOverviewSection,
+  // KeyApplicationsSection,
+  // VisionSection,
   MarketOpportunitySection,
 } from "@/components/home";
 import { Metadata } from "next";
+import { RevolutionIdentity } from "@/components/home/Revolution-Identity";
 
 export const metadata: Metadata = {
   title: "iVALT Home - Identity Validation Platform",
@@ -19,9 +20,10 @@ export default function Homepage2() {
     <>
       <HeroSection />
       <IdentityCrisisSection />
+      <RevolutionIdentity/>
       {/* <PlatformOverviewSection /> */}
-      <KeyApplicationsSection />
-      <VisionSection />
+      {/* <KeyApplicationsSection /> */}
+      {/* <VisionSection /> */}
       <MarketOpportunitySection />
     </>
   );
