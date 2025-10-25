@@ -39,8 +39,8 @@ export default function IdentityCrisisSection() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
-                      IoT devices and AI agents now outnumber humans, using vulnerable legacy identity methods
-                      <strong>poor security</strong>
+                      IoT devices and AI agents now outnumber humans, using vulnerable legacy identity methods 
+                       <strong>  poor security</strong>
                     </p>
                   </div>
                   <div className="flex items-start gap-3">

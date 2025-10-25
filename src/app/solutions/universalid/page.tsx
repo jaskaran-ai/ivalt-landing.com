@@ -29,7 +29,7 @@ export default function UniversalIdPage() {
     <section className="min-h-screen bg-background py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-5xl font-extrabold text-navy-primary mb-4">
-          Universal Biometric ID®
+          AI-Anchor ID®
         </h1>
         <h2 className="text-2xl font-semibold text-teal-primary mb-12">
           Enterprise Security

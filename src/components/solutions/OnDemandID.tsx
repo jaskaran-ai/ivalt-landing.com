@@ -8,10 +8,10 @@ import { Check } from "lucide-react";
 
 const Points = [
   "Real-Time Customer Identity",
-  "Proactive Agent Identity",
+  "Proactive Agent Identity and 1-Click KYC",
   "Stops Social Engineering & Deepfakes",
   "Highly Secure Account Access",
-  "1-Click KYC (Customer Support and Helpdesk)"
+  // "1-Click KYC (Customer Support and Helpdesk)"
 ];
 
 export default function OnDemandID() {

@@ -15,7 +15,7 @@ export default function PioneeringContent() {
       <Container className="max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-2xl md:text-5xl font-bold text-navy-primary mb-2 leading-tight text-shadow-sm">
+            <h1 className="text-3xl md:text-4xl font-bold text-navy-primary mb-2 leading-tight text-shadow-sm">
               Targeting the Highest Priority Identity Challenges
             </h1>
           </div>
