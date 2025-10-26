@@ -25,7 +25,7 @@ const transitionVariants = {
       },
     },
   },
-}
+};
 
 export function HeroSection() {
   return (
@@ -48,11 +48,14 @@ export function HeroSection() {
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <div className="w-full  py-4">
-                  <h1 className="text-center text-navy-primary  text-5xl font-bold mb-2">Human-Bound Identity</h1>
-                  <span className="block text-center text-[#0b8a51] text-2xl italic">Securing AI. Stopping Today&apos;s Threats.</span>
+                  <h1 className="mt-8 max-w-4xl mx-auto text-balance text-4xl md:text-7xl lg:mt-16 xl:text-[4.25rem] font-bold text-primary">
+                    Human-Bound Identity
+                  </h1>
+                  <h2 className="text-4xl font-bold text-teal-primary mt-4">
+                    Securing AI. Stopping Today&apos;s Threats.
+                  </h2>
                 </div>
                 <AnimatedGroup variants={transitionVariants}>
-
                   {/* <Link
                     href="/solutions"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
