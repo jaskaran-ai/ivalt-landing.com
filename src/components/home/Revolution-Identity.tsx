@@ -79,7 +79,7 @@ export function RevolutionIdentity() {
   // const  = features;
 
   return (
-    <section className="py-8">
+    <section className="py-16 bg-[#FAF9F7] z-30 overflow-hidden relative">
       <h1 className="text-5xl text-center pb-14 text-primary font-bold">
         Revolutionizing Identity
       </h1>

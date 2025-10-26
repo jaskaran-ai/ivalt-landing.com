@@ -5,6 +5,7 @@ import {
   // KeyApplicationsSection,
   // VisionSection,
   MarketOpportunitySection,
+  AIMandatedSection,
 } from "@/components/home";
 import { Metadata } from "next";
 import { RevolutionIdentity } from "@/components/home/Revolution-Identity";
@@ -20,7 +21,8 @@ export default function Homepage2() {
     <>
       <HeroSection />
       <IdentityCrisisSection />
-      <RevolutionIdentity/>
+      <AIMandatedSection />
+      <RevolutionIdentity />
       {/* <PlatformOverviewSection /> */}
       {/* <KeyApplicationsSection /> */}
       {/* <VisionSection /> */}

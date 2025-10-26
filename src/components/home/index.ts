@@ -4,3 +4,4 @@ export { default as PlatformOverviewSection } from "./PlatformOverviewSection";
 export { default as KeyApplicationsSection } from "./KeyApplicationsSection";
 export { default as VisionSection } from "./VisionSection";
 export { default as MarketOpportunitySection } from "./MarketOpportunitySection";
+export { default as AIMandatedSection } from "./AIMandatedSection";
