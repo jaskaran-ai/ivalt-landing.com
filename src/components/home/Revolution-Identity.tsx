@@ -1,8 +1,6 @@
 "use client";
-"use client";
 
 import React from "react";
-import { Card } from "@/components/ui/card";
 import {
   Fingerprint,
   MapPin,
@@ -17,60 +15,43 @@ const features = [
   {
     id: "biometrics",
     icon: Fingerprint,
-    title: "Biometrics + PKI ",
-    description:
-      "Cryptographic device binding for unassailable human-bound identity",
-    gradient: "from-cyan-200 to-blue-200",
-    span: "col-span-2 row-span-1 sm:col-span-1",
+    title:
+      "Biometrics + PKI (Cryptographic) Device Binding for Unassailable Human-Bound Identity",
   },
   {
     id: "gps",
     icon: MapPin,
-    title: "GPS Location ",
-    description:
-      "Available on every interaction for comprehensive context verification",
-    gradient: "from-emerald-200 to-teal-200",
+    title:
+      "GPS Location and Time Stamps Available on Every Interaction for Context Verification",
   },
   {
     id: "unified",
     icon: Users,
-    title: "Unified Platform",
-    description:
-      "Humans, AI Agents, and IoT Devices on a single integrated platform",
-    gradient: "from-purple-200 to-pink-200",
+    title: "Humans, AI Agents, and IOT Devices on a Single Platform",
   },
   {
     id: "pki",
     icon: Lock,
-    title: "End-to-End PKI",
-    description:
-      "Complete control and accountability for AI Agents and IoT Devices",
-    gradient: "from-orange-200 to-red-200",
+    title:
+      "End-to-End PKI for Control and Accountability for AI Agents and IOT Devices",
   },
   {
     id: "oob",
     icon: Shield,
-    title: "Out-of-Band Verification",
-    description:
-      "Independent and federated verification to augment and protect IAM platforms",
-    gradient: "from-blue-200 to-indigo-200",
+    title:
+      "Out-of-Band (Independent and Federated) Identity Verification to Augment and Protect IAM Platforms",
   },
   {
     id: "redirect",
     icon: Zap,
-    title: "Loop-Back Redirects",
-    description:
-      "Simple highly secure redirects to stop hackers with valid credentials",
-    gradient: "from-yellow-200 to-orange-200",
+    title:
+      "Simple Highly Secure Loop-Back Software Redirects (to Secure ACTIONS after Access) to Stop Hackers with Valid Credentials",
   },
   {
     id: "realtime",
     icon: Clock,
-    title: "Real-Time Endpoint Identity",
-    description:
-      "Continuous monitoring and verification of endpoint identity status",
-    gradient: "from-green-200 to-emerald-200",
-    span: "col-span-2 sm:col-span-1",
+    title:
+      "Real-Time Endpoint Identity to Stop Social Engineering and AI Deepfakes",
   },
 ];
 
@@ -83,47 +64,27 @@ export function RevolutionIdentity() {
       <h1 className="text-5xl text-center pb-14 text-primary font-bold">
         Revolutionizing Identity
       </h1>
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-4xl px-4">
+        <ul className="space-y-6">
           {features.map((item) => {
             const Icon = item.icon as React.ComponentType<
               React.SVGProps<SVGSVGElement>
             >;
             return (
-              <Card
+              <li
                 key={item.id}
-                className={`relative overflow-hidden bg-white rounded-2xl p-6 shadow-none transition-all duration-200 hover:shadow-xl border-[0.4px] border-gray-200  ${
-                  item.span || "col-span-1"
-                }`}
+                className="shadow-none flex items-start gap-4 p-6 bg-white rounded-2xl border-[0.4px] border-gray-200 hover:shadow-md transition-all duration-200"
               >
-                <div className="relative z-10 flex h-full flex-col justify-between">
-                  <div className="flex items-start gap-4">
-                    <div className="h-10 w-10 rounded-lg bg-teal-primary/10 flex items-center justify-center">
-                      <Icon className="h-5 w-5 text-teal-primary" />
-                    </div>
-                    <h3 className="text-lg text-primary font-semibold">
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  <div className="mt-4">
-                    <p className="mt-2 text-sm text-slate-600">
-                      {item.description}
-                    </p>
-
-                    <a
-                      href="#"
-                      className="mt-4 inline-flex items-center text-purple-600 font-medium"
-                    >
-                      {/* <span>Learn more</span> */}
-                      {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
-                    </a>
-                  </div>
+                <div className="h-10 w-10 rounded-lg bg-teal-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="h-5 w-5 text-teal-primary" />
                 </div>
-              </Card>
+                <h3 className="text-lg text-primary font-semibold leading-relaxed">
+                  {item.title}
+                </h3>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );
