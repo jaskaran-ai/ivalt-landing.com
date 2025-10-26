@@ -1,4 +1,6 @@
 export { default as ContextID } from "@/components/solutions/ContextID";
+export { default as LoopBackStopsInsiderThreats } from "@/components/solutions/LoopBackStopsInsiderThreats";
+export { default as IvaltCompletesIam } from "@/components/solutions/IvaltCompletesIam";
 export { default as DataSecurity } from "@/components/solutions/DataSecurity";
 export { default as DocuID } from "@/components/solutions/DocuID";
 export { default as OnDemandID } from "@/components/solutions/OnDemandID";

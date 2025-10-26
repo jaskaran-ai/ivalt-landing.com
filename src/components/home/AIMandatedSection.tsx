@@ -1,6 +1,5 @@
 import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
 import SectionTitle from "@/components/SectionTitle";
-import { Lock, Bot, Shield } from "lucide-react";
 import Image from "next/image";
 import aiMandated from "@/assets/images/home/ai-mandated.png";
 

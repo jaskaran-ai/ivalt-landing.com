@@ -9,6 +9,8 @@ import {
   SolutionComponents,
   DataSecurity,
   ContextID,
+  LoopBackStopsInsiderThreats,
+  IvaltCompletesIam,
 } from "@/components/solutions";
 
 export default function Solutions() {
@@ -16,11 +18,13 @@ export default function Solutions() {
     <Container className="bg-[#FAF9F7] md:py-16 py-6">
       <SectionTitle title="Solutions" description="" />
       <TargetingContent />
-      <PlatformOverviewSection/>
+      <PlatformOverviewSection />
       <Universal />
       <OnDemandID />
       <DocuID />
-      <ContextID />
+      <LoopBackStopsInsiderThreats />
+      <IvaltCompletesIam />
+      {/* <ContextID /> */}
       <DataSecurity />
       <SolutionComponents />
     </Container>
