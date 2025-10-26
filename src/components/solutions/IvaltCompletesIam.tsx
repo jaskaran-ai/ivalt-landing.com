@@ -4,14 +4,6 @@ import SectionTitle from "../SectionTitle";
 import Image from "next/image";
 import ivaltCompletesIam from "@/assets/images/solutions/ivalt-completes-iam.png";
 import { FadeInOnScroll } from "../ui/FadeInOnScroll";
-import { Check } from "lucide-react";
-
-const Points = [
-  "No Enterprise Infrastructure Integration Required",
-  "Granular Access Control to a Single Person",
-  "Stops Exfiltration Risks (Stolen Docs remain Safe)",
-  "Digital Rights Protection (sharing, printing, downloads, screen shots)",
-];
 
 export default function IvaltCompletesIam() {
   return (

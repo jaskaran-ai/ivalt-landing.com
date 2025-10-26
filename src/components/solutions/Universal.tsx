@@ -11,7 +11,7 @@ export default function Universal() {
     <FadeInOnScroll className="bg-white md:py-12 py-6">
       <Container className="max-w-7xl">
         <SectionTitle
-          title="AI-Anchor ID®"
+          title="AI-Anchor ID™"
           description="Anyone, Anywhere, at Any Time, for Any Application."
         />
         <div className="flex justify-center items-center my-4 mb-6">

@@ -3,12 +3,11 @@ import { PlatformOverviewSection } from "@/components/home";
 import SectionTitle from "@/components/SectionTitle";
 import {
   TargetingContent,
-  Universal,
   OnDemandID,
   DocuID,
   SolutionComponents,
   DataSecurity,
-  ContextID,
+  // ContextID,
   LoopBackStopsInsiderThreats,
   IvaltCompletesIam,
 } from "@/components/solutions";
@@ -19,7 +18,6 @@ export default function Solutions() {
       <SectionTitle title="Solutions" description="" />
       <TargetingContent />
       <PlatformOverviewSection />
-      <Universal />
       <OnDemandID />
       <DocuID />
       <LoopBackStopsInsiderThreats />

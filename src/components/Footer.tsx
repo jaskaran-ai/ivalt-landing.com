@@ -18,7 +18,7 @@ const footerLinks = {
   products: [
     {
       label: "AI-Anchor ID™",
-      href: "/solutions/universalid",
+      href: "/solutions/ai-anchor-id",
     },
     { label: "On-Demand ID™", href: "/solutions/ondemandid" },
     { label: "DocuID™", href: "/solutions/docuid" },
