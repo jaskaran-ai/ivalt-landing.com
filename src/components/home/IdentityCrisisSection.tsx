@@ -18,17 +18,17 @@ export default function IdentityCrisisSection() {
           </div>
         </FadeInOnScroll>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2  gap-12 items-center mt-12">
           <FadeInOnScroll>
-            <div className="bg-primary rounded-[30px] pt-4 z-0  h-96 relative shadow-lg">
-              <div className="flex items-center gap-3 mb-3 px-8 py-2 ">
+            <div className="bg-primary rounded-[30px] pt-4 z-0   relative shadow-lg">
+              <div className="flex items-center gap-3 mb-3 px-8 py-2">
                 <AlertTriangle className="h-6 w-6 text-white" />
                 <h3 className="text-xl font-semibold text-white ">
                   Emerging Risks
                 </h3>
               </div>
-              <div className="bg-white border-2 border-primary rounded-[30px] h-80 p-8 z-10">
-                <div className="space-y-10 mt-2">
+              <div className="bg-white border-2 border-primary rounded-[30px]    z-10">
+                <div className=" sm:space-y-1 md:space-y-14 py-1 space-y-2 px-4 lg:space-y-8 lg:mt-2  mt-2">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
