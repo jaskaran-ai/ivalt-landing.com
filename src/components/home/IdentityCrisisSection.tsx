@@ -27,8 +27,8 @@ export default function IdentityCrisisSection() {
                   Emerging Risks
                 </h3>
               </div>
-              <div className="bg-white border-2 border-primary rounded-[30px]    z-10">
-                <div className=" sm:space-y-1 md:space-y-14 py-1 space-y-2 px-4 lg:space-y-8 lg:mt-2  mt-2">
+              <div className=" bg-white border-2 py- border-primary rounded-[30px]   z-10">
+                <div className="md:space-y-14 md:py-1  h-80  space-y-1 px-3 md:py-  lg:space-y-10 lg:py-1   mt-2">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
