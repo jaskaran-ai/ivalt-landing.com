@@ -10,6 +10,7 @@ import {
   // ContextID,
   LoopBackStopsInsiderThreats,
   IvaltCompletesIam,
+  Universal,
 } from "@/components/solutions";
 
 export default function Solutions() {
@@ -20,6 +21,7 @@ export default function Solutions() {
       <PlatformOverviewSection />
       <OnDemandID />
       <DocuID />
+      <Universal />
       <LoopBackStopsInsiderThreats />
       <IvaltCompletesIam />
       {/* <ContextID /> */}

@@ -32,7 +32,7 @@ export default function AIMandatedSection() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <div className="inline-flex items-center px-6 py-0 text-teal-primary text-4xl font-bold gap-4">
+          <div className="inline-flex items-center px-6 py-0 text-teal-primary md:text-4xl font-bold gap-4">
             <span className="text-teal-primary">Who?</span>
             <span className="text-teal-primary">What?</span>
             <span className="text-teal-primary">Where?</span>

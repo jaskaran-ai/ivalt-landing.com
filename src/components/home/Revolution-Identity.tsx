@@ -61,7 +61,7 @@ export function RevolutionIdentity() {
 
   return (
     <section className="py-16 bg-[#FAF9F7] z-30 overflow-hidden relative">
-      <h1 className="text-5xl text-center pb-14 text-primary font-bold">
+      <h1 className="text-3xl text-navy-primary font-bold pb-6 text-center px-4">
         Revolutionizing Identity
       </h1>
       <div className="mx-auto max-w-4xl px-4">
@@ -78,7 +78,7 @@ export function RevolutionIdentity() {
                 <div className="h-10 w-10 rounded-lg bg-teal-primary/10 flex items-center justify-center flex-shrink-0">
                   <Icon className="h-5 w-5 text-teal-primary" />
                 </div>
-                <h3 className="text-lg text-primary font-semibold leading-relaxed">
+                <h3 className="md:text-lg text-navy-primary leading-relaxed">
                   {item.title}
                 </h3>
               </li>
