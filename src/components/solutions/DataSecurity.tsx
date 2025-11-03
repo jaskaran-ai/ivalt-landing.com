@@ -10,8 +10,8 @@ export default function DataSecurity() {
     <FadeInOnScroll className="bg-white py-6 md:py-12">
       <Container className="max-w-7xl">
         <SectionTitle
-          title="Comprehensive Data Security"
-          description="Access control + Encryption + Identity for every file"
+          title="Stop Data Exfiltration"
+          description="Generative AI and DocuID® Data File Security"
         />
         <div className="flex justify-center items-center my-4 mb-6">
           <Image

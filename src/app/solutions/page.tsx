@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import { PlatformOverviewSection } from "@/components/home";
 import SectionTitle from "@/components/SectionTitle";
 import {
   TargetingContent,
@@ -13,12 +14,13 @@ import {
 export default function Solutions() {
   return (
     <Container className="bg-[#FAF9F7] md:py-16 py-6">
-      <SectionTitle title="Solutions" description="" />
-      <TargetingContent />
-      <Universal />
+      <PlatformOverviewSection/>
+      {/* <SectionTitle title="Solutions" description="" /> */}
+      {/* <TargetingContent /> */}
+      {/* <Universal /> */}
       <OnDemandID />
       <DocuID />
-      <ContextID />
+      {/* <ContextID /> */}
       <DataSecurity />
       <SolutionComponents />
     </Container>

@@ -99,7 +99,7 @@ export default function PartnershipBenefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInOnScroll>
           <SectionTitle
-            title="Benefits We Bring to a Partnership"
+            title="Partnership Opportunities"
             description="Transform your business with our comprehensive identity validation platform that delivers measurable value across multiple dimensions."
           />
         </FadeInOnScroll>

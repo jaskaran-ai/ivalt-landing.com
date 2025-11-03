@@ -8,8 +8,8 @@ export default function IdentityCrisisSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInOnScroll>
           <SectionTitle
-            title="The Identity Crisis"
-            description="Legacy identity methods passwords, basic 2FA, device certificates are not enough."
+            title="The Identity Tipping Point"
+            description=" Decades of Legacy identity methods continue to enable devastating hacker attacks."
           />
           <div className="flex justify-center mt-6">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 text-primary text-lg font-bold">
@@ -24,39 +24,35 @@ export default function IdentityCrisisSection() {
               <div className="flex items-center gap-3 mb-3 px-8 py-2 ">
                 <AlertTriangle className="h-6 w-6 text-white" />
                 <h3 className="text-xl font-semibold text-white ">
-                  Emerging Risks
+                AI Changes Identity FOREVER
                 </h3>
               </div>
               <div className="bg-white border-2 border-primary rounded-[30px] h-80 p-8 z-10">
                 <div className="space-y-10 mt-2">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>$10.5 trillion</strong> projected cyber crime
-                      costs annually in 2025
-                    </p>
+                    AI Requires Continuous (Loop-Back) Accountability for ALL ACTIONS - Far Beyond ACCESS Logins
+
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      IoT devices now outnumber humans, often with{" "}
-                      <strong>poor security</strong>
-                    </p>
+                    Traditional “Access-Only” Identity does Not Work for AI Ecosystems
+
                   </div>
-                  <div className="flex items-start gap-3">
+                  {/* <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
                       AI <strong>deepfakes & social engineering</strong> attacks
                       are exploding
                     </p>
-                  </div>
-                  <div className="flex items-start gap-3">
+                  </div> */}
+                  {/* <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
                       Lack of <strong>endpoint identity</strong> for humans,
                       IoT, and AI agents is a root cause of breaches
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -66,7 +62,7 @@ export default function IdentityCrisisSection() {
             <div className="space-y-2">
               <div className="bg-teal-primary/10 p-6 rounded-xl border-2 border-teal-primary/20">
                 <h3 className="text-2xl font-bold text-teal-primary mb-3">
-                  <span className="text-primary">iVALT</span> Solution
+                  <span className="text-primary">iVALT</span> Solves Current Identity Threats
                 </h3>
                 <p className="text-gray-700 text-lg">
                   iVALT delivers a mobile-centric/SaaS platform for verified
