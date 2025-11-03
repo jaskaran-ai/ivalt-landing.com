@@ -16,9 +16,9 @@ import {
 export default function Solutions() {
   return (
     <Container className="bg-[#FAF9F7] md:py-16 py-6">
+      <PlatformOverviewSection />
       <SectionTitle title="Solutions" description="" />
       <TargetingContent />
-      <PlatformOverviewSection />
       <OnDemandID />
       <DocuID />
       <Universal />
