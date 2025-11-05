@@ -28,7 +28,7 @@ export default function IdentityCrisisSection() {
                 </h3>
               </div>
               <div className="bg-white flex justify-evenly border-2 border-primary rounded-[30px] h-80 p-8 z-10">
-                <div className="space-y-10 text-xl text-gray-700 mt-2">
+                <div className="space-y-10 lg:text-xl md:text-xl text-gray-700 mt-2">
                   <div className="flex items-start  gap-3">
                     <div className="w-2 h-2  bg-primary rounded-full mt-2 flex-shrink-0" />
                     AI Requires Continuous (Loop-Back) Accountability for ALL ACTIONS - Far Beyond ACCESS Logins

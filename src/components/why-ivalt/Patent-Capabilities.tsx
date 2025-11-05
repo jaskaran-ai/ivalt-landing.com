@@ -19,28 +19,28 @@ const Points = [
 ];
 
 export const PatentCapabilities = () => {
-  return (
-      <div className="bg-white p-6 py-11 rounded-2xl  mt-16 shadow-md max-w-6xl mx-auto">
-          <h1 className="text-5xl font-bold text-primary mb-6 text-center">
-              iVALT’s Patented Capabilities
-          </h1>
-          <ul className="list-disc pl-5 space-y-7 text-gray-800">
-              {Points.map((point, index) => (
-                  <li
-                      key={index}
-                      className="flex flex-wrap gap-x-2 leading-relaxed text-base"
-                  >
-                      <span className="font-bold text-primary text-xl whitespace-nowrap">
-                          {point.title}
-                      </span>
-                      <span className="text-primary font-semibold">→</span>
-                      <span className="italic text-gray-800 text-xl flex-1">
-                          {point.desc}
-                      </span>
-                  </li>
-              ))}
-          </ul>
-      </div>
+    return (
+        <div className="bg-white p-4 sm:p-6 md:py-11 rounded-2xl mt-8 sm:mt-12 md:mt-16 shadow-md max-w-6xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6 text-center">
+                iVALT&apos;s Patented Capabilities
+            </h1>
+            <ul className="list-disc pl-3 sm:pl-4 md:pl-5 space-y-4 sm:space-y-5 md:space-y-7 text-gray-800">
+                {Points.map((point, index) => (
+                    <li
+                        key={index}
+                        className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-x-2 leading-relaxed"
+                    >
+                        <span className="font-bold text-primary text-lg sm:text-xl whitespace-normal sm:whitespace-nowrap">
+                            {point.title}
+                        </span>
+                        <span className="hidden sm:inline text-primary font-semibold">→</span>
+                        <span className="italic text-gray-800 text-base sm:text-lg md:text-xl flex-1">
+                            {point.desc}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+        </div>
 
-  )
+    )
 }
