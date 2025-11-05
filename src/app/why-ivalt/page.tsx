@@ -1,11 +1,13 @@
 import Container from "@/components/Container";
 import SectionTitle from "@/components/SectionTitle";
 import {
-  ComingSoon,
-  FactorsOfIdentity,
+  // ComingSoon,
+  // FactorsOfIdentity,
   PartnershipBenefits,
   PioneeringContent,
 } from "@/components/why-ivalt";
+import { PatentCapabilities } from "@/components/why-ivalt/Patent-Capabilities";
+import { UniqeBenifits } from "@/components/why-ivalt/Uniqe-Benifits";
 
 export default function WhyIvalt() {
   return (
@@ -14,6 +16,8 @@ export default function WhyIvalt() {
       <PioneeringContent />
       {/* <FactorsOfIdentity /> */}
       <PartnershipBenefits />
+      <UniqeBenifits/>
+      <PatentCapabilities/>
       {/* <ComingSoon /> */}
     </Container>
   );

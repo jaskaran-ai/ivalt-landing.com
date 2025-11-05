@@ -23,7 +23,7 @@ const founders: Founder[] = [
     name: "Baldev Krishan, Ph.D.",
     image: Baldev,
     title: "Founder and CEO",
-    description: `2X Nominated for "Entrepreneur of the Year" in Silicon Valley, 26 patents`,
+    description: `2X Nominated for "Entrepreneur of the Year" in Silicon Valley, 22 patents`,
     awards: ["Visionary", "Innovator"],
     linkedin: "https://www.linkedin.com/in/baldev-krishan-1ab14b9/",
   },

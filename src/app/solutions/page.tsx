@@ -10,6 +10,9 @@ import {
   DataSecurity,
   ContextID,
 } from "@/components/solutions";
+import { DocuIdFile } from "@/components/solutions/DocuIdFile";
+import { OnDemand } from "@/components/solutions/On-Demand";
+import { ProtectionDocuId } from "@/components/solutions/ProtectionDocuId";
 
 export default function Solutions() {
   return (
@@ -18,8 +21,12 @@ export default function Solutions() {
       {/* <SectionTitle title="Solutions" description="" /> */}
       {/* <TargetingContent /> */}
       {/* <Universal /> */}
-      <OnDemandID />
-      <DocuID />
+      {/* <OnDemandID /> */}
+      <OnDemand/>
+      <DocuIdFile/>
+      <ProtectionDocuId/>
+
+      {/* <DocuID /> */}
       {/* <ContextID /> */}
       <DataSecurity />
       <SolutionComponents />
