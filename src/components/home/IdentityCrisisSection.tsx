@@ -27,8 +27,8 @@ export default function IdentityCrisisSection() {
                 AI Changes Identity FOREVER
                 </h3>
               </div>
-              <div className="bg-white flex justify-evenly border-2 border-primary rounded-[30px] h-80 p-8 z-10">
-                <div className="space-y-10 lg:text-xl md:text-xl text-gray-700 mt-2">
+              <div className="bg-white flex sm:text-sm  sm:space-y-4 justify-evenly   border-2 border-primary rounded-[30px] h-80 px-4 lg:py-8 md:py-11 z-10">
+                <div className="space-y-8   lg:text-xl md:text-xl text-gray-700 mt-2">
                   <div className="flex items-start  gap-3">
                     <div className="w-2 h-2  bg-primary rounded-full mt-2 flex-shrink-0" />
                     AI Requires Continuous (Loop-Back) Accountability for ALL ACTIONS - Far Beyond ACCESS Logins
@@ -39,13 +39,13 @@ export default function IdentityCrisisSection() {
                     Traditional “Access-Only” Identity does Not Work for AI Ecosystems
 
                   </div>
-                  {/* <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">
                       AI <strong>deepfakes & social engineering</strong> attacks
                       are exploding
                     </p>
-                  </div> */}
+                  </div>
                   {/* <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <p className="text-gray-700">

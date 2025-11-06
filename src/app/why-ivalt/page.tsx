@@ -15,9 +15,9 @@ export default function WhyIvalt() {
       <SectionTitle title="Why iVALT ?" description="" />
       <PioneeringContent />
       {/* <FactorsOfIdentity /> */}
-      <PartnershipBenefits />
       <UniqeBenifits/>
       <PatentCapabilities/>
+      <PartnershipBenefits />
       {/* <ComingSoon /> */}
     </Container>
   );
