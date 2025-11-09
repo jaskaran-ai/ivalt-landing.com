@@ -4,7 +4,14 @@ import { useState } from "react";
 import { Heading4 } from "./ui/typography";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  AlertCircle,
+  User,
+  Mail,
+  FileText,
+} from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -107,12 +114,15 @@ export default function ApiRequestForm() {
               <FormItem>
                 <FormLabel className="text-gray-500 mb-2">Name</FormLabel>
                 <FormControl>
-                  <Input
-                    type="text"
-                    placeholder="Your name"
-                    {...field}
-                    className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 placeholder:text-gray-500"
-                  />
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <Input
+                      type="text"
+                      placeholder="Your name"
+                      {...field}
+                      className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 pl-10 placeholder:text-gray-500"
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -125,12 +135,15 @@ export default function ApiRequestForm() {
               <FormItem>
                 <FormLabel className="text-gray-500 mb-2">Email</FormLabel>
                 <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="Your email address"
-                    {...field}
-                    className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 placeholder:text-gray-500"
-                  />
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <Input
+                      type="email"
+                      placeholder="Your email address"
+                      {...field}
+                      className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 pl-10 placeholder:text-gray-500"
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -145,12 +158,15 @@ export default function ApiRequestForm() {
                   Reason for API Request
                 </FormLabel>
                 <FormControl>
-                  <Textarea
-                    placeholder="Please describe why you need API access and how you plan to use it..."
-                    {...field}
-                    rows={6}
-                    className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-primary focus:border-teal-primary resize-none"
-                  />
+                  <div className="relative">
+                    <FileText className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                    <Textarea
+                      placeholder="Please describe why you need API access and how you plan to use it..."
+                      {...field}
+                      rows={6}
+                      className="w-full pl-10 pr-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-primary focus:border-teal-primary resize-none"
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
