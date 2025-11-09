@@ -11,7 +11,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  AlertCircle,
+  User,
+  Mail,
+  HelpCircle,
+  MessageSquare,
+} from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -116,12 +124,15 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel className="text-gray-500 mb-2">Name</FormLabel>
                 <FormControl>
-                  <Input
-                    type="text"
-                    placeholder="Your name"
-                    {...field}
-                    className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 placeholder:text-gray-500"
-                  />
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <Input
+                      type="text"
+                      placeholder="Your name"
+                      {...field}
+                      className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 pl-10 placeholder:text-gray-500"
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -134,12 +145,15 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel className="text-gray-500 mb-2">Email</FormLabel>
                 <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="Your email address"
-                    {...field}
-                    className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 placeholder:text-gray-500"
-                  />
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <Input
+                      type="email"
+                      placeholder="Your email address"
+                      {...field}
+                      className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary py-6 pl-10 placeholder:text-gray-500"
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -155,9 +169,12 @@ export default function ContactForm() {
                 </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
-                    <SelectTrigger className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary w-full py-6 placeholder:text-gray-500">
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
+                    <div className="relative">
+                      <HelpCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 z-10 pointer-events-none" />
+                      <SelectTrigger className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary w-full py-6 pl-10 placeholder:text-gray-500">
+                        <SelectValue placeholder="Select inquiry type" />
+                      </SelectTrigger>
+                    </div>
                   </FormControl>
                   <SelectContent>
                     <SelectItem value="general">General Inquiry</SelectItem>
@@ -178,12 +195,15 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel className="text-gray-500 mb-2">Message</FormLabel>
                 <FormControl>
-                  <Textarea
-                    placeholder="Your message"
-                    {...field}
-                    rows={4}
-                    className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-primary focus:border-teal-primary resize-none"
-                  />
+                  <div className="relative">
+                    <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                    <Textarea
+                      placeholder="Your message"
+                      {...field}
+                      rows={4}
+                      className="w-full pl-10 pr-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-primary focus:border-teal-primary resize-none"
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
