@@ -48,6 +48,99 @@ function createTransporter() {
   });
 }
 
+// Generate admin notification email template
+function generateAdminNotificationTemplate(
+  name: string,
+  email: string,
+  reason: string
+): string {
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>New API Access Request - iVALT</title>
+    </head>
+    <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+      <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 40px 20px;">
+            <table role="presentation" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <!-- Header -->
+              <tr>
+                <td style="background: linear-gradient(135deg, #1E4884 0%, #30B68E 100%); padding: 40px 30px; text-align: center;">
+                  <img src="https://ivalt.com/images/logohome.png" alt="iVALT" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                  <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;">New API Access Request</h1>
+                </td>
+              </tr>
+              
+              <!-- Content -->
+              <tr>
+                <td style="padding: 40px 30px;">
+                  <p style="color: #495057; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
+                    A new API access request has been submitted and API key has been sent to the requester.
+                  </p>
+                  
+                  <!-- Request Details -->
+                  <div style="background-color: #f8f9fa; border-left: 4px solid #30B68E; padding: 20px; border-radius: 4px; margin: 30px 0;">
+                    <h3 style="color: #1E4884; font-size: 18px; margin: 0 0 20px 0;">Request Details</h3>
+                    
+                    <div style="margin-bottom: 15px;">
+                      <p style="color: #495057; font-size: 14px; font-weight: 600; margin: 0 0 5px 0; text-transform: uppercase; letter-spacing: 0.5px;">Name</p>
+                      <p style="color: #1E4884; font-size: 16px; margin: 0;">${name}</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                      <p style="color: #495057; font-size: 14px; font-weight: 600; margin: 0 0 5px 0; text-transform: uppercase; letter-spacing: 0.5px;">Email</p>
+                      <p style="color: #1E4884; font-size: 16px; margin: 0;">
+                        <a href="mailto:${email}" style="color: #30B68E; text-decoration: none;">${email}</a>
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <p style="color: #495057; font-size: 14px; font-weight: 600; margin: 0 0 5px 0; text-transform: uppercase; letter-spacing: 0.5px;">Reason for API Request</p>
+                      <div style="background-color: #ffffff; border: 1px solid #e9ecef; border-radius: 4px; padding: 15px; margin-top: 10px;">
+                        <p style="color: #495057; font-size: 15px; line-height: 1.6; margin: 0; white-space: pre-wrap;">${reason.replace(/\n/g, "<br>")}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Action Info -->
+                  <div style="background-color: #e7f3ff; border-left: 4px solid #1E4884; padding: 20px; border-radius: 4px; margin: 30px 0;">
+                    <p style="color: #495057; font-size: 15px; line-height: 1.6; margin: 0;">
+                      <strong style="color: #1E4884;">Note:</strong> The API key has been automatically sent to the requester's email address. No further action is required unless you need to revoke access or follow up with the requester.
+                    </p>
+                  </div>
+                  
+                  <p style="color: #495057; font-size: 15px; line-height: 1.6; margin: 30px 0 0 0;">
+                    Best regards,<br>
+                    <strong style="color: #1E4884;">iVALT API System</strong>
+                  </p>
+                </td>
+              </tr>
+              
+              <!-- Footer -->
+              <tr>
+                <td style="background-color: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e9ecef;">
+                  <p style="color: #6c757d; font-size: 12px; margin: 0 0 10px 0;">
+                    iVALT - Revolutionizing Identity Security
+                  </p>
+                  <p style="color: #6c757d; font-size: 12px; margin: 0;">
+                    <a href="https://ivalt.com" style="color: #30B68E; text-decoration: none;">ivalt.com</a> | 
+                    <a href="https://ivalt.com/api-request" style="color: #30B68E; text-decoration: none; margin-left: 5px;">API Request Page</a>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </body>
+    </html>
+  `;
+}
+
 // Generate API key email template
 function generateApiKeyEmailTemplate(name: string, apiKey: string): string {
   return `
@@ -228,6 +321,53 @@ export async function POST(request: NextRequest) {
       html: emailHtml,
     });
 
+    // Get admin emails for notification
+    const adminEmails =
+      process.env.ADMIN_EMAILS ||
+      process.env.CONTACT_EMAILS ||
+      process.env.CONTACT_EMAIL ||
+      "info@ivalt.com";
+    const adminRecipients = adminEmails
+      .split(",")
+      .map((email) => email.trim())
+      .filter((email) => email);
+
+    // Generate admin notification email
+    const adminEmailHtml = generateAdminNotificationTemplate(
+      validatedData.name,
+      validatedData.email,
+      validatedData.reason
+    );
+
+    const adminEmailText = `
+      New API Access Request - iVALT
+
+      A new API access request has been submitted and API key has been sent to the requester.
+
+      Request Details:
+      Name: ${validatedData.name}
+      Email: ${validatedData.email}
+      
+      Reason for API Request:
+      ${validatedData.reason}
+
+      Note: The API key has been automatically sent to the requester's email address. No further action is required unless you need to revoke access or follow up with the requester.
+
+      ---
+      iVALT - Revolutionizing Identity Security
+      ivalt.com
+    `;
+
+    // Send notification email to admins
+    await transporter.sendMail({
+      from: `"iVALT API System" <${process.env.SMTP_USER}>`,
+      to: adminRecipients,
+      subject: `New API Access Request from ${validatedData.name}`,
+      text: adminEmailText,
+      html: adminEmailHtml,
+      replyTo: validatedData.email,
+    });
+
     return NextResponse.json(
       { message: "API request processed successfully. API key sent to email." },
       { status: 200 }
@@ -237,7 +377,7 @@ export async function POST(request: NextRequest) {
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: "Validation failed", details: error.errors },
+        { error: "Validation failed", details: error.issues },
         { status: 400 }
       );
     }
