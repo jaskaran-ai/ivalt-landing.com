@@ -52,6 +52,20 @@ NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your-recaptcha-site-key
 NEXT_PUBLIC_APP_URL=http://localhost:3000  # Change for production
 ```
 
+### API Key Configuration
+
+For the API request feature, you need to set an API key that will be sent to users who request API access:
+
+```env
+API_KEY=your-api-key-here  # The API key to send to users requesting access
+```
+
+**Important**: 
+- This should be a secure, randomly generated API key
+- Never commit this key to version control
+- Use a different key for production than development
+- Consider using a key management service for production environments
+
 ## Gmail App Password Setup
 
 For Gmail SMTP, you need to use an App Password instead of your regular password:
@@ -85,8 +99,9 @@ The following API endpoints handle form submissions:
 
 - `/api/contact` - Contact form submissions
 - `/api/newsletter` - Newsletter signups
+- `/api/api-request` - API access requests
 
-Both endpoints:
+All endpoints:
 - Validate input using Zod schemas
 - Verify reCAPTCHA v3 tokens
 - Send emails using Nodemailer
@@ -125,6 +140,12 @@ For backward compatibility, the system falls back to:
    - Email signup for notifications
    - Sends welcome email to subscriber
    - Sends notification to all `ADMIN_EMAILS` recipients
+
+3. **API Request Form** (`/src/components/ApiRequestForm.tsx`)
+   - Used on the `/api-request` page
+   - Includes name, email, and reason for API request fields
+   - Sends API key email to the requester's email address
+   - API key is read from `API_KEY` environment variable
 
 ## Security Features
 
