@@ -99,7 +99,7 @@ function generateApiKeyEmailTemplate(
                     <h3 style="color: #1E4884; font-size: 18px; margin: 0 0 15px 0;">Next Steps</h3>
                     <ol style="color: #495057; font-size: 15px; line-height: 1.8; margin: 0; padding-left: 20px;">
                       <li style="margin-bottom: 10px;">Review our API documentation to get started</li>
-                      <li style="margin-bottom: 10px;">Use your API key in the Authorization header: <code style="background-color: #f8f9fa; padding: 2px 6px; border-radius: 3px; font-size: 13px;">Authorization: Bearer ${apiKey}</code></li>
+                      <li style="margin-bottom: 10px;">Use your API key in the x-api-key header: <code style="background-color: #f8f9fa; padding: 2px 6px; border-radius: 3px; font-size: 13px;">x-api-key: ${apiKey}</code></li>
                       <li style="margin-bottom: 10px;">Start building your integration</li>
                       <li>Contact our support team if you need assistance</li>
                     </ol>
@@ -204,7 +204,7 @@ export async function POST(request: NextRequest) {
 
       Next Steps:
       1. Review our API documentation to get started
-      2. Use your API key in the Authorization header: Authorization: Bearer ${apiKey}
+      2. Use your API key in the x-api-key header: x-api-key: ${apiKey}
       3. Start building your integration
       4. Contact our support team if you need assistance
 
