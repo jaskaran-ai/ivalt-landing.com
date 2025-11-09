@@ -185,7 +185,7 @@ function generateApiKeyEmailTemplate(name: string, apiKey: string): string {
                   <div style="background-color: #ffffff; border: 1px solid #e9ecef; border-radius: 8px; padding: 25px; margin: 30px 0;">
                     <h3 style="color: #1E4884; font-size: 18px; margin: 0 0 15px 0;">Next Steps</h3>
                     <ol style="color: #495057; font-size: 15px; line-height: 1.8; margin: 0; padding-left: 20px;">
-                      <li style="margin-bottom: 10px;">Review our API documentation to get started</li>
+                      <li style="margin-bottom: 10px;">Review our <a href="https://documenter.getpostman.com/view/26384076/2sA2rGuzHV" style="color: #30B68E; text-decoration: none; font-weight: 600;">API documentation</a> to get started</li>
                       <li style="margin-bottom: 10px;">Use your API key in the x-api-key header: <code style="background-color: #f8f9fa; padding: 2px 6px; border-radius: 3px; font-size: 13px;">x-api-key: ${apiKey}</code></li>
                       <li style="margin-bottom: 10px;">Start building your integration</li>
                       <li>Contact our support team if you need assistance</li>
@@ -207,7 +207,7 @@ function generateApiKeyEmailTemplate(name: string, apiKey: string): string {
                   <div style="background-color: #e7f3ff; border-left: 4px solid #1E4884; padding: 20px; border-radius: 4px; margin: 30px 0;">
                     <p style="color: #495057; font-size: 15px; line-height: 1.6; margin: 0;">
                       <strong style="color: #1E4884;">Need Help?</strong><br>
-                      Our support team is here to assist you. Reach out to us at <a href="mailto:support@ivalt.com" style="color: #30B68E; text-decoration: none;">support@ivalt.com</a> or visit our <a href="https://ivalt.com" style="color: #30B68E; text-decoration: none;">documentation</a>.
+                      Our support team is here to assist you. Reach out to us at <a href="mailto:support@ivalt.com" style="color: #30B68E; text-decoration: none;">support@ivalt.com</a> or visit our <a href="https://documenter.getpostman.com/view/26384076/2sA2rGuzHV" style="color: #30B68E; text-decoration: none;">API documentation</a>.
                     </p>
                   </div>
                   
@@ -287,7 +287,7 @@ export async function POST(request: NextRequest) {
       IMPORTANT: Keep this key secure and never share it publicly.
 
       Next Steps:
-      1. Review our API documentation to get started
+      1. Review our API documentation to get started: https://documenter.getpostman.com/view/26384076/2sA2rGuzHV
       2. Use your API key in the x-api-key header: x-api-key: ${apiKey}
       3. Start building your integration
       4. Contact our support team if you need assistance
@@ -299,7 +299,7 @@ export async function POST(request: NextRequest) {
       - Use HTTPS for all API requests
 
       Need Help?
-      Our support team is here to assist you. Reach out to us at support@ivalt.com or visit our documentation.
+      Our support team is here to assist you. Reach out to us at support@ivalt.com or visit our API documentation: https://documenter.getpostman.com/view/26384076/2sA2rGuzHV
 
       Best regards,
       The iVALT Team
