@@ -49,10 +49,7 @@ function createTransporter() {
 }
 
 // Generate API key email template
-function generateApiKeyEmailTemplate(
-  name: string,
-  apiKey: string
-): string {
+function generateApiKeyEmailTemplate(name: string, apiKey: string): string {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -69,7 +66,7 @@ function generateApiKeyEmailTemplate(
               <!-- Header -->
               <tr>
                 <td style="background: linear-gradient(135deg, #1E4884 0%, #30B68E 100%); padding: 40px 30px; text-align: center;">
-                  <img src="https://ivalt.com/logo-transparent-bg.png" alt="iVALT" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                  <img src="https://ivalt.com/images/logohome.png" alt="iVALT" style="max-width: 200px; height: auto; margin-bottom: 20px;">
                   <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;">API Access Granted</h1>
                 </td>
               </tr>
@@ -185,10 +182,7 @@ export async function POST(request: NextRequest) {
     const transporter = createTransporter();
 
     // Generate email content
-    const emailHtml = generateApiKeyEmailTemplate(
-      validatedData.name,
-      apiKey
-    );
+    const emailHtml = generateApiKeyEmailTemplate(validatedData.name, apiKey);
 
     const emailText = `
       API Access Granted - iVALT
@@ -254,4 +248,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
