@@ -5,20 +5,12 @@ import { Heading4 } from "./ui/typography";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
-import {
   ArrowRight,
   CheckCircle,
   AlertCircle,
   User,
   Mail,
-  HelpCircle,
-  MessageSquare,
+  FileText,
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -37,14 +29,13 @@ import { useRecaptcha } from "@/hooks/useRecaptcha";
 const formSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
   email: z.string().email({ message: "Invalid email address" }),
-  inquiryType: z.string(),
-  message: z
+  reason: z
     .string()
-    .min(10, { message: "Message must be at least 10 characters" })
-    .max(1000, { message: "Message must be less than 1000 characters" }),
+    .min(10, { message: "Reason must be at least 10 characters" })
+    .max(1000, { message: "Reason must be less than 1000 characters" }),
 });
 
-export default function ContactForm() {
+export default function ApiRequestForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
@@ -57,8 +48,7 @@ export default function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      inquiryType: "general",
-      message: "",
+      reason: "",
     },
   });
 
@@ -75,13 +65,13 @@ export default function ContactForm() {
 
     try {
       // Get reCAPTCHA token
-      const recaptchaToken = await getRecaptchaToken("contact_form");
+      const recaptchaToken = await getRecaptchaToken("api_request");
       if (!recaptchaToken) {
         throw new Error("Failed to verify reCAPTCHA");
       }
 
       // Submit form
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/api-request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -94,7 +84,7 @@ export default function ContactForm() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to send message");
+        throw new Error(errorData.error || "Failed to submit API request");
       }
 
       setSubmitStatus("success");
@@ -102,7 +92,7 @@ export default function ContactForm() {
     } catch (error) {
       console.error("Form submission error:", error);
       setErrorMessage(
-        error instanceof Error ? error.message : "Failed to send message"
+        error instanceof Error ? error.message : "Failed to submit API request"
       );
       setSubmitStatus("error");
     } finally {
@@ -113,7 +103,7 @@ export default function ContactForm() {
   return (
     <div>
       <Heading4 color="navy-primary" className="mb-4">
-        Quick Contact
+        Request API Access
       </Heading4>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -163,46 +153,19 @@ export default function ContactForm() {
           />
           <FormField
             control={form.control}
-            name="inquiryType"
+            name="reason"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-gray-500 mb-2">
-                  Inquiry Type
+                  Reason for API Request
                 </FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <div className="relative">
-                      <HelpCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 z-10 pointer-events-none" />
-                      <SelectTrigger className="bg-white border-gray-300 focus:ring-teal-primary focus:border-teal-primary w-full py-6 pl-10 placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed" disabled={isSubmitting}>
-                        <SelectValue placeholder="Select inquiry type" />
-                      </SelectTrigger>
-                    </div>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="general">General Inquiry</SelectItem>
-                    <SelectItem value="sales">Sales</SelectItem>
-                    <SelectItem value="support">Technical Support</SelectItem>
-                    <SelectItem value="partnership">Partnership</SelectItem>
-                    <SelectItem value="media">Media & Press</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-500 mb-2">Message</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                    <FileText className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <Textarea
-                      placeholder="Your message"
+                      placeholder="Please describe why you need API access and how you plan to use it..."
                       {...field}
-                      rows={4}
+                      rows={6}
                       disabled={isSubmitting}
                       className="w-full pl-10 pr-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-primary focus:border-teal-primary resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                     />
@@ -216,8 +179,8 @@ export default function ContactForm() {
             <div className="flex items-center gap-2 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
               <CheckCircle className="h-5 w-5" />
               <span>
-                Message sent successfully! We&apos;ll get back to you within 24
-                hours.
+                Request submitted successfully! We&apos;ll send your API key to
+                the email address provided within 24 hours.
               </span>
             </div>
           )}
@@ -234,7 +197,7 @@ export default function ContactForm() {
             disabled={isSubmitting || !isRecaptchaReady}
             className="w-full bg-teal-primary hover:bg-teal-primary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-6 rounded-lg transition-colors duration-200"
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? "Submitting..." : "Request API Access"}
             {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
           </Button>
 
@@ -260,3 +223,4 @@ export default function ContactForm() {
     </div>
   );
 }
+
