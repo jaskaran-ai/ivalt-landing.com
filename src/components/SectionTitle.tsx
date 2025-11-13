@@ -11,7 +11,7 @@ export default function SectionTitle({ title, description }: SectionTitleProps) 
         <Heading2 color="dark-navy" className="text-3xl font-bold">
           {title}
         </Heading2>
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="mt-4 text-2xl text-gray-600 max-w-3xl mx-auto">
           {description}
         </p>
       </div>

@@ -44,32 +44,32 @@ export default function PlatformOverviewSection() {
                   Multi-Factor (up to 25) Authentication:
                 </h4>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Fingerprint className="h-5 w-5 text-teal-primary" />
+                  <div className="flex items-center  text-sm gap-3">
+                    <Fingerprint className="h-5 w-5  text-teal-primary" />
                     <p className="text-gray-600">
                       Biometrics: Face, fingerprint
                     </p>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center  text-sm gap-3">
                     <Smartphone className="h-5 w-5 text-teal-primary" />
                     <p className="text-gray-600">
                       Device identity: Registered phone
                     </p>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center  text-sm gap-3">
                     <MapPin className="h-5 w-5 text-teal-primary" />
                     <p className="text-gray-600">
                       GPS & Time: Real-world context
                     </p>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex  text-sm items-center gap-3">
                     <TrendingUp className="h-5 w-5 text-teal-primary" />
                     <p className="text-gray-600">
                       Dynamic Variables: Real-time random data (weather, stocks,
                       etc.)
                     </p>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center  text-sm gap-3">
                     <Bot className="h-5 w-5 text-teal-primary" />
                     <p className="text-gray-600">AI-driven factor selection</p>
                   </div>
