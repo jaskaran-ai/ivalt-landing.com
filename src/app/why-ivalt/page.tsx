@@ -1,19 +1,23 @@
 import Container from "@/components/Container";
 import SectionTitle from "@/components/SectionTitle";
 import {
-  ComingSoon,
-  FactorsOfIdentity,
+  // ComingSoon,
+  // FactorsOfIdentity,
   PartnershipBenefits,
   PioneeringContent,
 } from "@/components/why-ivalt";
+import { PatentCapabilities } from "@/components/why-ivalt/Patent-Capabilities";
+import { UniqeBenifits } from "@/components/why-ivalt/Uniqe-Benifits";
 
 export default function WhyIvalt() {
   return (
     <Container className="bg-[#FAF9F7] md:py-12 py-6">
       <SectionTitle title="Why iVALT ?" description="" />
       <PioneeringContent />
-      <FactorsOfIdentity />
+      {/* <FactorsOfIdentity /> */}
+      <PatentCapabilities/>
       <PartnershipBenefits />
+      <UniqeBenifits/>
       {/* <ComingSoon /> */}
     </Container>
   );

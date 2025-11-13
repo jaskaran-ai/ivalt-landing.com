@@ -7,6 +7,10 @@ import {
   MarketOpportunitySection,
 } from "@/components/home";
 import { Metadata } from "next";
+import { HumanIdentity } from "@/components/home/HumanIdentity";
+import { TrustedHuman } from "@/components/home/Trusted-human";
+import { IvaultBridge } from "@/components/home/IvaultBridge";
+import { UserExperience } from "@/components/home/User-Experience";
 
 export const metadata: Metadata = {
   title: "iVALT Home - Identity Validation Platform",
@@ -19,10 +23,14 @@ export default function Homepage2() {
     <>
       <HeroSection />
       <IdentityCrisisSection />
-      <PlatformOverviewSection />
-      <KeyApplicationsSection />
-      <VisionSection />
-      <MarketOpportunitySection />
+      <HumanIdentity/>
+      <TrustedHuman/>
+      <IvaultBridge/>
+      <UserExperience/>
+      {/* <PlatformOverviewSection /> */}
+      {/* <KeyApplicationsSection /> */}
+      {/* <VisionSection /> */}
+      {/* <MarketOpportunitySection /> */}
     </>
   );
 }
