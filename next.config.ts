@@ -25,24 +25,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
-  },
-};
-
-export default nextConfig;
-
-module.exports = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
   },
   async headers() {
     return [
@@ -61,4 +45,6 @@ module.exports = {
       },
     ];
   },
-};
+} as NextConfig;
+
+export default nextConfig;
