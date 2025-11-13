@@ -37,13 +37,13 @@ const founders: Founder[] = [
     linkedin: "https://www.linkedin.com/in/baldev-krishan-1ab14b9/",
   },
   {
-    name: "Marc",
+    name: "Marc Ricker",
     image: Marc,
     title: "EVP Business Development & Strategy",
     description:
       "25+ years in Sales & marketing. Experience in manufacturing, media, product development, technology, and start-ups, driving innovation from concept to market.",
     awards: ["Business Development", "Strategy"],
-    linkedin: "https://www.linkedin.com/in/marc/",
+    linkedin: "https://www.linkedin.com/in/marc-ricker-121b61128/",
   },
 ];
 
