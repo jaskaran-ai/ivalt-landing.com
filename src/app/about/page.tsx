@@ -6,6 +6,7 @@ import IntellectualProperty from "@/components/IntellectualProperty";
 import Image, { StaticImageData } from "next/image";
 import Baldev from "@/assets/images/about/baldev.png";
 import Brian from "@/assets/images/about/Brian.png";
+import Marc from "@/assets/images/about/Marc.jpg";
 import LinkedIn from "@/assets/linkedin.png";
 import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
 
@@ -34,6 +35,15 @@ const founders: Founder[] = [
     description: "25+ years CXO Mobile, Internet, SaaS – Startups through Exit",
     awards: ["Strategist", "Product Expert"],
     linkedin: "https://www.linkedin.com/in/baldev-krishan-1ab14b9/",
+  },
+  {
+    name: "Marc",
+    image: Marc,
+    title: "EVP Business Development & Strategy",
+    description:
+      "25+ years in Sales & marketing. Experience in manufacturing, media, product development, technology, and start-ups, driving innovation from concept to market.",
+    awards: ["Business Development", "Strategy"],
+    linkedin: "https://www.linkedin.com/in/marc/",
   },
 ];
 
@@ -112,45 +122,40 @@ export default function About() {
             </Heading2>
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
-            {/* Founders Cards */}
-            <div className="lg:col-span-1">
-              <div className="flex flex-col md:flex-row gap-4 justify-center">
-                {founders.map((founder, index) => (
-                  <FadeInOnScroll key={founder.name} delay={index * 0.1}>
-                    <Founder key={founder.name} founder={founder} />
-                  </FadeInOnScroll>
-                ))}
-              </div>
-            </div>
-
-            {/* Company Description */}
-            <FadeInOnScroll delay={1} className="lg:col-span-1">
-              <div className="bg-white rounded-md p-8 border-4 border-gray-100 h-full">
-                <Heading2 color="teal-primary" className="text-xl mb-6">
-                  Our Story
-                </Heading2>
-                <BodyText className="text-gray-700 leading-relaxed">
-                  Founded in 2019 by Baldev Krishan and Brian Stout, iVALT®
-                  addresses the persistent issue of identity fraud by moving
-                  beyond outdated username/password authentication and
-                  ineffective 2FA.
-                </BodyText>
-                <BodyText className="text-gray-700 leading-relaxed mt-4">
-                  Recognizing that technology alone isn&apos;t the solution,
-                  they developed a mobile app that captures and verifies 5+
-                  dynamic variables, including biometrics, location, and time,
-                  in a single click.
-                </BodyText>
-                <BodyText className="text-gray-700 leading-relaxed mt-4">
-                  This innovative approach, combining a mobile app with a secure
-                  SaaS engine, aims to provide technology efficiency and the
-                  highest level of security against evolving hacking techniques.
-                </BodyText>
-              </div>
-            </FadeInOnScroll>
+          {/* Founders Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mb-4">
+            {founders.map((founder, index) => (
+              <FadeInOnScroll key={founder.name} delay={index * 0.1}>
+                <Founder founder={founder} />
+              </FadeInOnScroll>
+            ))}
           </div>
+
+          {/* Company Description */}
+          <FadeInOnScroll delay={0.4}>
+            <div className="bg-white rounded-md p-8 border-4 border-gray-100 w-full mx-auto">
+              <Heading2 color="teal-primary" className="text-xl mb-6">
+                Our Story
+              </Heading2>
+              <BodyText className="text-gray-700 text-sm leading-relaxed">
+                Founded in 2019 by Baldev Krishan and Brian Stout, iVALT®
+                addresses the persistent issue of identity fraud by moving
+                beyond outdated username/password authentication and ineffective
+                2FA.
+              </BodyText>
+              <BodyText className="text-gray-700 text-sm leading-relaxed mt-4">
+                Recognizing that technology alone isn&apos;t the solution, they
+                developed a mobile app that captures and verifies 5+ dynamic
+                variables, including biometrics, location, and time, in a single
+                click.
+              </BodyText>
+              <BodyText className="text-gray-700 text-sm leading-relaxed mt-4">
+                This innovative approach, combining a mobile app with a secure
+                SaaS engine, aims to provide technology efficiency and the
+                highest level of security against evolving hacking techniques.
+              </BodyText>
+            </div>
+          </FadeInOnScroll>
         </div>
         {/* Intellectual Property Section */}
         <IntellectualProperty />
