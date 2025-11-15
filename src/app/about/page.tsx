@@ -108,7 +108,7 @@ const Founder = ({ founder }: { founder: Founder }) => {
 export default function About() {
   return (
     <>
-      <Container className="bg-[#FAF9F7] py-16">
+      <Container className="bg-[#f6f5f4] py-16">
         <SectionTitle
           title="Our Mission"
           description="To eliminate identity fraud by providing seamless, one-click authentication that dynamically verifies user and contextual variables, ensuring unparalleled security and user convenience."
@@ -123,7 +123,7 @@ export default function About() {
           </div>
 
           {/* Founders Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mb-4">
+          <div className="grid grid-cols-1 m-auto  md:grid-cols-1 lg:grid-cols-2 gap-2 justify-center mb-4">
             {founders.map((founder, index) => (
               <FadeInOnScroll key={founder.name} delay={index * 0.1}>
                 <Founder founder={founder} />
