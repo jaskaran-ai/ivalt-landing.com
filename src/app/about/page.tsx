@@ -36,15 +36,15 @@ const founders: Founder[] = [
     awards: ["Strategist", "Product Expert"],
     linkedin: "https://www.linkedin.com/in/baldev-krishan-1ab14b9/",
   },
-  {
-    name: "Marc Ricker",
-    image: Marc,
-    title: "EVP Business Development & Strategy",
-    description:
-      "25+ years in Sales & marketing. Experience in manufacturing, media, product development, technology, and start-ups, driving innovation from concept to market.",
-    awards: ["Business Development", "Strategy"],
-    linkedin: "https://www.linkedin.com/in/marc-ricker-121b61128/",
-  },
+  // {
+  //   name: "Marc Ricker",
+  //   image: Marc,
+  //   title: "EVP Business Development & Strategy",
+  //   description:
+  //     "25+ years in Sales & marketing. Experience in manufacturing, media, product development, technology, and start-ups, driving innovation from concept to market.",
+  //   awards: ["Business Development", "Strategy"],
+  //   linkedin: "https://www.linkedin.com/in/marc-ricker-121b61128/",
+  // },
 ];
 
 const Founder = ({ founder }: { founder: Founder }) => {
@@ -108,7 +108,7 @@ const Founder = ({ founder }: { founder: Founder }) => {
 export default function About() {
   return (
     <>
-      <Container className="bg-[#FAF9F7] py-16">
+      <Container className="bg-[#f6f5f4] py-16">
         <SectionTitle
           title="Our Mission"
           description="To eliminate identity fraud by providing seamless, one-click authentication that dynamically verifies user and contextual variables, ensuring unparalleled security and user convenience."
@@ -123,7 +123,7 @@ export default function About() {
           </div>
 
           {/* Founders Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mb-4">
+          <div className="grid grid-cols-1 m-auto  md:grid-cols-1 lg:grid-cols-2 gap-2 justify-center mb-4">
             {founders.map((founder, index) => (
               <FadeInOnScroll key={founder.name} delay={index * 0.1}>
                 <Founder founder={founder} />
