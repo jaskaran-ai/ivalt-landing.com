@@ -83,20 +83,20 @@ function ParallaxHero() {
           priority
         />
       </motion.div>
-      <div className="absolute inset-0 bg-white/60" />
+      <div className="absolute inset-0 bg-[#FAF9F7]/80" />
       <motion.div
         style={{ opacity }}
         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center h-full flex flex-col justify-center"
       >
-        <div className="flex items-center justify-center gap-8 lg:gap-12 mb-8">
+        <div className="flex items-center justify-center gap-8 lg:gap-12 mb-0">
           <Image
             src={openvpnLogo}
             alt="OpenVPN"
-            width={160}
-            height={90}
+            width={180}
+            height={100}
             className="object-contain"
           />
-          <span className="text-navy-primary text-6xl font-bold">+</span>
+          <span className="text-navy-primary text-6xl">+</span>
           <Image
             src={ivaltLogo}
             alt="iVALT"
