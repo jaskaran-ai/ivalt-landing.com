@@ -179,7 +179,7 @@ export default function OpenVPNPageClient() {
               </BodyText>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:info@ivalt.com"
+                  href="mailto:openvpn@ivalt.com"
                   className="inline-flex items-center justify-center px-8 py-4 bg-teal-primary text-white font-semibold rounded-lg hover:bg-teal-dark transition-colors"
                 >
                   Contact Sales
@@ -218,10 +218,10 @@ export default function OpenVPNPageClient() {
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
                     <a
-                      href="mailto:info@ivalt.com"
+                      href="mailto:openvpn@ivalt.com"
                       className="text-white hover:text-teal-primary transition-colors"
                     >
-                      info@ivalt.com
+                      openvpn@ivalt.com
                     </a>
                   </div>
                 </div>
