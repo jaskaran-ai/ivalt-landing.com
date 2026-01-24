@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/ui/hero-section";
+import { AnnouncementBanner } from "@/components/ui/announcement-banner";
 import {
   IdentityCrisisSection,
   PlatformOverviewSection,
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 export default function Homepage2() {
   return (
     <>
+      <AnnouncementBanner />
       <HeroSection />
       <IdentityCrisisSection />
       <HumanIdentity/>
