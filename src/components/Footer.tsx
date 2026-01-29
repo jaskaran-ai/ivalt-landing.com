@@ -8,7 +8,7 @@ import {
   SmallText,
   Caption,
 } from "@/components/ui/typography";
-import { Mail } from "lucide-react";
+import { ExternalLink, Mail } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { usePathname } from "next/navigation";
 import LinkedIn from "@/assets/linkedin.png";
@@ -186,24 +186,37 @@ export default function Footer() {
         )}
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 py-6">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-            <Caption className="text-gray-500">
-              © 2025 iVALT. All rights reserved.
-            </Caption>
-            <div className="flex space-x-6">
-              <Link
-                href="/privacy-policy"
-                className="text-gray-500 hover:text-navy-primary transition-colors duration-200"
-              >
-                <Caption>Privacy</Caption>
-              </Link>
-              <Link
-                href="/terms-and-conditions"
-                className="text-gray-500 hover:text-navy-primary transition-colors duration-200"
-              >
-                <Caption>Terms</Caption>
-              </Link>
+        <div className="border-t border-gray-200 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <p className="text-gray-500 text-sm">
+                © 2026 iVALT. All rights reserved.
+              </p>
+              <div className="flex items-center gap-6">
+                <Link
+                  href="/privacy-policy"
+                  className="text-gray-500 hover:text-navy-primary text-sm transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link
+                  href="/terms-and-conditions"
+                  className="text-gray-500 hover:text-navy-primary text-sm transition-colors"
+                >
+                  Terms of Service
+                </Link>
+                <span className="text-gray-300">|</span>
+                <a
+                  href="https://www.docuid.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-navy-primary text-sm transition-colors inline-flex items-center gap-1"
+                >
+                  DocuID.net
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
