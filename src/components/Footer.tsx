@@ -21,7 +21,7 @@ const footerLinks = {
       href: "/solutions/universalid",
     },
     { label: "On-Demand ID™", href: "/solutions/ondemandid" },
-    { label: "DocuID™", href: "/solutions/docuid" },
+    { label: "DocuID®", href: "/solutions/docuid" },
   ],
   company: [
     { label: "Why iVALT?", href: "/why-ivalt" },

@@ -34,7 +34,7 @@ interface PressRelease {
 const pressReleases: PressRelease[] = [
   {
     id: "docuid",
-    title: "iVALT Revolutionizes Document Security with Launch of DocuID™",
+    title: "iVALT Revolutionizes Document Security with Launch of DocuID®",
     date: "April 22, 2025",
     summary:
       "iVALT, an innovator in identity verification and security solutions, today announced the launch of DocuID, a groundbreaking document protection service that empowers document owners with unprecedented control over access to their critical information.",
