@@ -27,7 +27,7 @@ export const footerLinks = {
     { label: "Solutions", href: "/solutions" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Press Releases", href: "/press-release" },
+    { label: "Recent Updates", href: "/recent-updates" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
