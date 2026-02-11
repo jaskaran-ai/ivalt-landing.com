@@ -10,6 +10,7 @@ import {
   FileLock,
   Smartphone,
   Fingerprint,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -53,6 +54,11 @@ export const navItems = [
         description: "Enterprise Security Solution",
       },
     ],
+  },
+  {
+    label: "Recent Updates",
+    href: "/recent-updates",
+    badge: "New",
   },
   {
     label: "About",
@@ -153,6 +159,12 @@ export default function Header() {
                     }`}
                   >
                     {item.label}
+                    {item.badge && (
+                      <span className="ml-1.5 inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-bold bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-full shadow-sm">
+                        <Sparkles className="w-2.5 h-2.5" />
+                        {item.badge}
+                      </span>
+                    )}
                   </Link>
                 );
               })}
@@ -254,13 +266,19 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className={`text-lg font-medium py-2 px-4 rounded-sm transition-colors ${
+                        className={`text-lg font-medium py-2 px-4 rounded-sm transition-colors flex items-center justify-between ${
                           isActive
                             ? "bg-primary text-white"
                             : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                         }`}
                       >
-                        {item.label}
+                        <span>{item.label}</span>
+                        {item.badge && (
+                          <span className="inline-flex items-center gap-0.5 px-2 py-0.5 text-[10px] font-bold bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-full shadow-sm">
+                            <Sparkles className="w-2.5 h-2.5" />
+                            {item.badge}
+                          </span>
+                        )}
                       </Link>
                     );
                   })}
