@@ -82,6 +82,7 @@ export default function RecentUpdatesClient() {
           <SectionTitle
             title="Recent Updates"
             description="Stay updated with the latest news and announcements from iVALT"
+            textAlign="text-left"
           />
           <div className="flex items-center gap-2 bg-white rounded-lg p-1 shadow-sm self-start sm:self-auto">
             <button
